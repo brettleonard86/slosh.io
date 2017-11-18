@@ -1,3 +1,8 @@
+
+
+//****************** JUST A TEMPLET FOR SERVER ***************
+
+
 // Require our dependencies
 var express = require("express");
 var mongoose = require("mongoose");
@@ -25,6 +30,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Have every request go through our route middleware
+app.get("/json", )
 app.use(routes);
 
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database

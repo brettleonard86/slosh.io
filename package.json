@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/brettleonard86/slosh.io/issues"
   },
-  "homepage": "https://github.com/brettleonard86/slosh.io#readme"
+  "homepage": "https://github.com/brettleonard86/slosh.io#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "fs": "0.0.1-security",
+    "http": "0.0.0",
+    "routes": "^2.1.0"
+  }
 }

@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 // Dependencies
 var http = require("http");
 var fs = require("fs");
@@ -44,7 +44,7 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.listen(PORT, function() {
   console.log("App listening on PORT: " + PORT);
 });
-=======
+
 
 
 //****************** JUST A TEMPLET FOR SERVER ***************
@@ -94,4 +94,4 @@ mongoose.connect(MONGODB_URI, {
 app.listen(PORT, function() {
   console.log("Listening on port: " + PORT);
 });
->>>>>>> 45ee33c62ababe9752f61ef9d2b020cc6bdfb5d4
+

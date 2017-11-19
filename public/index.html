@@ -37,20 +37,23 @@
     <div class="login-wrap">
       <div class="field">
         <div class="control">
-          <div class="g-signin2" data-width="930%" data-height="100%" data-onsuccess="onSignIn"></div>
+          <!-- <div id="my-signin2" class="g-signin2"  data-onsuccess="onSignIn"></div> -->
+          <div class="g-signin2" data-width="240" data-height="50" data-longtitle="true" data-onsuccess="onSignIn">
           
           <!-- sign out-->
           <a href="#" onclick="signOut();">Sign out</a>
-          <script src="js/index.js"></script>
+          
         </div>
       </div>
     </div>
   </section>
 <br>
 
-  <section class="section is-mobile has-text-centered site-footer">f
+  <section class="section is-mobile has-text-centered site-footer">
   </section>
   <script src="js/index.js"></script>
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+
+  
 </body>
 </html>

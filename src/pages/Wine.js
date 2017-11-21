@@ -5,7 +5,7 @@ import SearchForm from "../components/SearchForm";
 import SearchResults from "../components/SearchResults";
 import Alert from "../components/Alert";
 
-class Search extends Component {
+class Wine extends Component {
   state = {
     search: "",
     breeds: [],
@@ -38,22 +38,11 @@ class Search extends Component {
   render() {
     return (
       <Container style={{ minHeight: "80%" }}>
-        <h1 className="text-center">Search By Breed!</h1>
-        <Alert
-          type="danger"
-          style={{ opacity: this.state.error ? 1 : 0, marginBottom: 10 }}
-        >
-          {this.state.error}
-        </Alert>
-        <SearchForm
-          handleFormSubmit={this.handleFormSubmit}
-          handleInputChange={this.handleInputChange}
-          breeds={this.state.breeds}
-        />
+        <h1 className="text-center">Recommended wine!</h1>
         <SearchResults results={this.state.results} />
       </Container>
     );
   }
 }
 
-export default Search;
+export default Wine;

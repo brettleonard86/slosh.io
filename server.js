@@ -97,7 +97,3 @@ mongoose.connect(MONGODB_URI, {
 app.listen(PORT, function() {
   console.log("Listening on port: " + PORT);
 });
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes

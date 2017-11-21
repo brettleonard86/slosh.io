@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3000;
+const alcohol = require("./scripts/alcohol");
 
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -21,11 +22,13 @@ mongoose.Promise = Promise;
 
 // Connect to the Mongo DB
 mongoose.connect(
-	process.env.MONGODB_URI || "mongodb://localhost/slosh.io", 
+	process.env.MONGODB_URI || "mongodb://localhost/sloshio", 
 	{
   	  useMongoClient: true
 	}
 );
+
+//alcohol.seedData();
 
 // Listen on the port
 app.listen(PORT, function() {

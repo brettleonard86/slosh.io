@@ -1,13 +1,12 @@
 const router = require("express").Router();
 const alcoholController = require("../../controllers/alcoholController");
 
-// Matches with "/api/ + "my pairing"
+// Matches with "/api/alcohol + "my pairing"
 router.route("/:pairings")
   .get(alcoholController.findAllPairings);
 
-// Matches with "/api/books/:id"
-router
-  .route("/")
+// Matches with "/api/alcohol"
+router.route("/")
   .get(alcoholController.findAll)
 
 

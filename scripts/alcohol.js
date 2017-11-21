@@ -3,13 +3,13 @@ const db = require("../models");
 mongoose.Promise = global.Promise;
 
 //This file empties the Wines collection and inserts the alcohols below 
-mongoose.connect(
-    process.env.MONGODB_URI || "mongodb://localhost/slosh.io",
+/*mongoose.connect(
+    process.env.MONGODB_URI || "mongodb://localhost/sloshio",
     {
         useMongoClient: true
     }
 );
-
+*/
 const alcohol = [
         {
             "@search.score": 1,
@@ -2007,14 +2007,23 @@ const alcohol = [
         }
     ];
 
-db.Wines
-  .remove({})
-  .then(() => db.Wines.collection.insertMany(alcohol))
-  .then(data => {
-    console.log(data.insertedIds.length + " records inserted!");
-    process.exit(0);
-  })
-  .catch(err => {
-    console.error(err);
-    process.exit(1);
-  });
+var testData = alcohol.map(item => {
+    delete item["@search.score"];
+    return item;
+})
+
+module.exports = {
+seedData: function () {
+    db.Wines
+      .remove({})
+      .then(() => db.Wines.collection.insertMany(testData))
+      .then(data => {
+        console.log(data.insertedIds.length + " records inserted!");
+        process.exit(0);
+      })
+      .catch(err => {
+        console.error(err);
+        process.exit(1);
+      });
+    }
+}

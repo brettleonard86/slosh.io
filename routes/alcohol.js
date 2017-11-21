@@ -1,33 +1,14 @@
-var express = require('express');
-var router = require("express").Router();
-var mongojs = require('mongojs');
-var db = mongojs('mongodb://localhost/slosh.io', ['wines']);
+const router = require("express").Router();
+const booksController = require("../../controllers/alcoholController");
 
-router.get('/food', function(req, res, next){
-    db.wines.find(function(err, wines){
-        if(err){
-            res.send(err);
-        }
-        res.json(wines);
-    });
-});
+// Matches with "/api/ + "my pairing"
+router.route("/:pairings")
+  .get(booksController.findAllPairings);
 
-//Save wines
-router.post('/newfood', function(req, res, next){
-    var wines = req.body;
-    if(!wines.title || !(wines.isDone + '')){
-        res.status(400);
-        res.json({
-            "error": "Bad bad Data"
-        });
-    } else {
-        db.wines.save(wines, function(err, wines){
-            if(err){
-                res.send(err);
-            }
-            res.json(wines);
-        });
-    }
-});
+// Matches with "/api/books/:id"
+router
+  .route("/")
+  .get(booksController.findAll)
+
 
 module.exports = router;

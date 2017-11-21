@@ -1,43 +1,33 @@
-// Web Scraper Homework Solution Example
-// (be sure to watch the video to see
-// how to operate the site in the browser)
-// -/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
-
 // Require our dependencies
-var express = require("express");
-var mongoose = require("mongoose");
-var bodyParser = require("body-parser");
+const express = require("express");
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+const routes = require("./routes");
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-// Set up our port to be either the host's designated port, or 3000
-var PORT = process.env.PORT || 3000;
-
-// Instantiate our Express App
-var app = express();
-
-// Require our routes
-var routes = require("./routes/alcohol")(app);
-
-// Designate our public folder as a static directory
-app.use(express.static("public"));
-
-// Use bodyParser in our app
+// Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// Have every request go through our route middleware
+// serve up static assets
+app.use(express.static("client/build"));
+
+// Add routes, both API and view
 app.use(routes);
 
-// If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/slosh.io";
-
-// Set mongoose to leverage built in JavaScript ES6 Promises
-// Connect to the Mongo DB
+//Set up promies awith mongoose
 mongoose.Promise = Promise;
-mongoose.connect(MONGODB_URI, {
-  useMongoClient: true
-});
+
+// Connect to the Mongo DB
+mongoose.connect(
+	process.env.MONGODB_URI || "mongodb://localhost/slosh.io", 
+	{
+  	  useMongoClient: true
+	}
+);
 
 // Listen on the port
 app.listen(PORT, function() {
-  console.log("Listening on port: " + PORT);
+  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });

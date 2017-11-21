@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const wineSchema = new Schema({
-            @search.score: 1,
             wine_Id: { type: String },
             product_Id: { type: String },
             isAvailable: { type: Number },
@@ -23,7 +22,7 @@ const wineSchema = new Schema({
             price: { type: String },
             pairings: [{ type: String }],
             body: [{ type: String }],
-            cider: "",
+            cider: { type: String },
             closure: [{ type: String }],
             descriptorFlavor: [{ type: String }],
             descriptorUnique: [{ type: String }],
@@ -33,7 +32,6 @@ const wineSchema = new Schema({
             sweetness: [{ type: String }],
             tasting_note: [{ type: String }],
             winemaking: [{ type: String }]
-        }
 });
 
 const Wines = mongoose.model("Wines", wineSchema);

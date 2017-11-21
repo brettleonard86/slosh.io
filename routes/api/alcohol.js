@@ -1,14 +1,14 @@
 const router = require("express").Router();
-const booksController = require("../../controllers/alcoholController");
+const alcoholController = require("../../controllers/alcoholController");
 
 // Matches with "/api/ + "my pairing"
 router.route("/:pairings")
-  .get(booksController.findAllPairings);
+  .get(alcoholController.findAllPairings);
 
 // Matches with "/api/books/:id"
 router
   .route("/")
-  .get(booksController.findAll)
+  .get(alcoholController.findAll)
 
 
 module.exports = router;

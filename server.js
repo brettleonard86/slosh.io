@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 // Dependencies
 var http = require("http");
@@ -45,6 +46,8 @@ app.listen(PORT, function() {
   console.log("App listening on PORT: " + PORT);
 });
 
+=======
+>>>>>>> b9a1a0ca5ea073a822a939a296d0f4d29473f090
 
 
 //****************** JUST A TEMPLET FOR SERVER ***************
@@ -56,7 +59,8 @@ var mongoose = require("mongoose");
 var exphbs = require("express-handlebars");
 var bodyParser = require("body-parser");
 
-// Set up our port to be either the host's designated port, or 8080
+// Set up our port to be either the host's designated port, or 3000
+
 var PORT = process.env.PORT || 3000;
 
 // Instantiate our Express App

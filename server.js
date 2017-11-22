@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 
 // Dependencies
 var http = require("http");
@@ -46,8 +45,6 @@ app.listen(PORT, function() {
   console.log("App listening on PORT: " + PORT);
 });
 
-=======
->>>>>>> Stashed changes
 
 
 //****************** JUST A TEMPLET FOR SERVER ***************

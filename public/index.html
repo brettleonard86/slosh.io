@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slosh</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/bulma.css">
+  <link rel="stylesheet" href="css/Login.css">
+
+  
+
+  <meta name="google-signin-client_id" content="1063825968337-jlrfit23tiqrc36i9rkkbhmgstbdrslm.apps.googleusercontent.com">
+
+</head>
+<body>
+  <section class="page-wrap section is-mobile">
+    <section class="hero is-primary">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns is-mobile">
+            <div class="column has-text-centered content">
+              <h1 id="titletext" class="title">
+                Slosh
+              </h1>
+              <h2 id="subtitletext" class="subtitle">
+                Pairing food & alcohol
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="content-wrap">
+      <div>
+        <img id="wineimage" src="assets/wine.jpg" height="90%" width="90%"/>
+      </div>
+    </div>
+    <div class="login-wrap">
+      <div class="field">
+        <div class="control">
+          <!-- <div id="my-signin2" class="g-signin2"  data-onsuccess="onSignIn"></div> -->
+          <div class="g-signin2" data-width="240" data-height="50" data-longtitle="true" data-onsuccess="onSignIn">
+          
+          <!-- sign out-->
+          <a href="#" onclick="signOut();">Sign out</a>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+<br>
+
+  <section class="section is-mobile has-text-centered site-footer">
+  </section>
+  <script src="js/index.js"></script>
+  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+
+  
+</body>
+</html>

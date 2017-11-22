@@ -1,53 +1,3 @@
-<<<<<<< Updated upstream
-
-// Dependencies
-var http = require("http");
-var fs = require("fs");
-var express = require("express");
-var bodyParser = require("body-parser");
-
-// Set our port to 8080
-var PORT = 8080;
-
-// ==============================================================================
-// EXPRESS CONFIGURATION
-// This sets up the basic properties for our express server
-// ==============================================================================
-
-// Tells node that we are creating an "express" server
-var app = express();
-app.use(express.static('public'))
-
-// Sets an initial port. We"ll use this later in our listener
-var PORT = process.env.PORT || 8080;
-
-// BodyParser makes it possible for our server to interpret data sent to it.
-// The code below is pretty standard.
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.text());
-app.use(bodyParser.json({ type: "application/vnd.api+json" }));
-
-// ================================================================================
-// ROUTER
-// The below points our server to a series of "route" files.
-// These routes give our server a "map" of how to respond when users visit or request data from various URLs.
-// ================================================================================
-
-//require("./routes/apiRoutes")(app);
-//require("./routes/htmlRoutes")(app);
-
-// =============================================================================
-// LISTENER
-// The below code effectively "starts" our server
-// =============================================================================
-
-app.listen(PORT, function() {
-  console.log("App listening on PORT: " + PORT);
-});
-
-=======
->>>>>>> Stashed changes
 
 
 //****************** JUST A TEMPLET FOR SERVER ***************
@@ -59,7 +9,8 @@ var mongoose = require("mongoose");
 var exphbs = require("express-handlebars");
 var bodyParser = require("body-parser");
 
-// Set up our port to be either the host's designated port, or 8080
+// Set up our port to be either the host's designated port, or 3000
+
 var PORT = process.env.PORT || 3000;
 
 // Instantiate our Express App

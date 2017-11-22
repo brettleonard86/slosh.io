@@ -10,8 +10,6 @@ module.exports ={
 		.catch(err => res.status(422).json(err));
 	},
 	findAllPairings: function(req, res) {
-		console.log(req.params);
-		console.log(req.query);
 		db.Wines
 		.find({"pairings" : req.params.pairings})
 		.then(dbModel => res.json(dbModel))

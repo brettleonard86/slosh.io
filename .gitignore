@@ -1,3 +1,5 @@
+# https://raw.githubusercontent.com/facebook/react/master/.gitignore
+
 .DS_STORE
 node_modules
 *~
@@ -21,3 +23,4 @@ chrome-user-data
 .vscode
 *.swp
 *.swo
+

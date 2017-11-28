@@ -2,12 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
-// Depending on the current path, this component sets the "active" class on the appropriate navigation link item
+const navStyle= {
+}
 const Navbar = props =>
 
-  <nav className="navbar navbar-default">
+  <nav style={navStyle} className="navbar navbar-default">
     <div className="container-fluid">
-      <ul className="nav navbar-nav">
+      <Link className="navbar-brand" to="/">Slosh.io</Link>
+      <ul className="nav navbar-nav pull-right">
         <li
           className={
             window.location.pathname === "/" ||

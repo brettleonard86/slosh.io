@@ -7,21 +7,24 @@ import ReactDOM from 'react-dom';
 import GoogleLogin from 'react-google-login';
 
 
-// const Login = () =>
-//   <div>
-//     <Hero backgroundImage="http://www.slopemedia.org/wp-content/uploads/2016/09/wine.jpg">
-//     </Hero>
-//   </div>;
-
+const loginStyle = {
+    textAlign: "center",
+    marginTop: '70%',
+    //backgroundImage: "url(" + require("../images/wine-background.jpg") + ")",
+}
+var name = 'Please log in'
 const responseGoogle = (response) => {
   console.log(response);
   console.log("The user's name is " + response.w3.ig)
   console.log("The user email is " + response.w3.U3)
+  name = response.w3.ig;
+  console.log(name)
 }
 
-
-const Login = (props) => {
+var Login = (props) => {
   return (
+    <div style={loginStyle}>
+      <p>{(name)}</p>
     <GoogleLogin
       clientId="1063825968337-jlrfit23tiqrc36i9rkkbhmgstbdrslm.apps.googleusercontent.com"
       onSuccess={responseGoogle}
@@ -30,6 +33,7 @@ const Login = (props) => {
       height={50}
       longtitle={true}
     />
+    </div>
   )
 }
 

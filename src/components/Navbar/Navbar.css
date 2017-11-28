@@ -1,3 +1,8 @@
-nav.navbar.navbar-default {
-  margin-bottom: 0;
+.navbar-collapse.collapse {
+	display: block!important;
 }
+
+.navbar-nav>li, .navbar-nav {
+	float: left !important;
+}
+

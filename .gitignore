@@ -1,7 +1,7 @@
 # https://raw.githubusercontent.com/facebook/react/master/.gitignore
 
 .DS_STORE
-node_modules
+node_modules/**/*
 *~
 *.pyc
 .grunt

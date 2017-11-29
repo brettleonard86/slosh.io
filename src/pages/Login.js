@@ -4,7 +4,9 @@ import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
 import ReactDOM from 'react-dom';
-import GoogleLogin from 'react-google-login';
+// import GoogleLogin from 'react-google-login';
+// import { GoogleLogout } from 'react-google-login';
+// import { GoogleLogin } from 'react-google-login';
 
 
 const loginStyle = {
@@ -32,8 +34,13 @@ var Login = (props) => {
       width={240}
       height={50}
       longtitle={true}
+      isSignedIn={true}
     />
+<<<<<<< HEAD
+    //document.getElementById('googleButton')
+=======
     </div>
+>>>>>>> 091e8e3d9d584d631ce159e590dc49fbdd1d0623
   )
 }
 

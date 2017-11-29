@@ -15,7 +15,7 @@ class Wine extends Component {
 
   // When the component mounts, get a list of all available base breeds and update this.state.breeds
   componentDidMount() {
-    API.getBaseBreedsList()
+    API.getWineList()
       .then(res => this.setState({ breeds: res.data.message }))
       .catch(err => console.log(err));
   }

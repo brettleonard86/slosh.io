@@ -45,19 +45,19 @@ class UserForm extends React.Component {
     const { choice } = this.state;
     return (
       <div>
-         <div>
-           <button onClick={() => this.openModal()}>Open modal</button>
-           <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
-            <GoogleLogin
-            clientId="1063825968337-jlrfit23tiqrc36i9rkkbhmgstbdrslm.apps.googleusercontent.com"
-            onSuccess={this.responseGoogle}
-            onFailure={this.responseGoogle}
-            width={240}
-            height={50}
-            longtitle={true}
-          />
-           </Modal>
-         </div>
+        <div>
+          <button onClick={() => this.openModal()}>LOGIN</button>
+            <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
+              <GoogleLogin
+              clientId="1063825968337-jlrfit23tiqrc36i9rkkbhmgstbdrslm.apps.googleusercontent.com"
+              onSuccess={this.responseGoogle}
+              onFailure={this.responseGoogle}
+              width={240}
+              height={50}
+              longtitle={true}
+              />
+            </Modal>
+        </div>
         <div>
           <form onSubmit={this.onSubmit}>
             <label>Select list:</label>

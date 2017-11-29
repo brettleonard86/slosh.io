@@ -13,17 +13,12 @@ const Navbar = props =>
         <li
           className={
             window.location.pathname === "/" ||
-            window.location.pathname === "/Login"
+            window.location.pathname === "/Food"
               ? "active"
               : ""
           }
         >
-          <Link to="/">Login</Link>
-        </li>
-        <li
-          className={window.location.pathname === "/Food" ? "active" : ""}
-        >
-          <Link to="/Food">Food</Link>
+          <Link to="/">Food</Link>
         </li>
         <li className={window.location.pathname === "/Wine" ? "active" : ""}>
           <Link to="/Wine">Wine</Link>

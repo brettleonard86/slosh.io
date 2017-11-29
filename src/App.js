@@ -12,8 +12,7 @@ const App = () =>
     <div>
       <Navbar />
       <Wrapper>
-        <Route exact path="/" component={Login} />
-        <Route exact path="/Login" component={Login} />
+        <Route exact path="/" component={UserForm} />
         <Route exact path="/Food" component={UserForm} />
         <Route exact path="/Wine" component={Wine} />
       </Wrapper>

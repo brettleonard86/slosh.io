@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Modal from "./Modal";
+import GoogleLogin from 'react-google-login';
 
 
 class UserForm extends React.Component {
@@ -26,26 +27,37 @@ class UserForm extends React.Component {
 
   }
 
-  // openModal() {
-  //   this.setState({ isModalOpen: true })
-  // }
+   openModal() {
+     this.setState({ isModalOpen: true })
+   }
 
-  // closeModal() {
-  //   this.setState({ isModalOpen: false })
-  // }
+   closeModal() {
+     this.setState({ isModalOpen: false })
+   }
+
+   responseGoogle(response) {
+    console.log(response);
+    console.log("The user's name is " + response.w3.ig)
+    console.log("The user email is " + response.w3.U3)
+   }
 
   render() {
     const { choice } = this.state;
     return (
       <div>
-        // <div>
-        //   <button onClick={() => this.openModal()}>Open modal</button>
-        //   <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
-        //     <h1>Modal title</h1>
-        //     <p>hello</p>
-        //     <p><button onClick={() => this.closeModal()}>Close</button></p>
-        //   </Modal>
-        // </div>
+         <div>
+           <button onClick={() => this.openModal()}>Open modal</button>
+           <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
+            <GoogleLogin
+            clientId="1063825968337-jlrfit23tiqrc36i9rkkbhmgstbdrslm.apps.googleusercontent.com"
+            onSuccess={this.responseGoogle}
+            onFailure={this.responseGoogle}
+            width={240}
+            height={50}
+            longtitle={true}
+          />
+           </Modal>
+         </div>
         <div>
           <form onSubmit={this.onSubmit}>
             <label>Select list:</label>

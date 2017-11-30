@@ -2010,8 +2010,40 @@ const alcohol = [
 var testData = alcohol.map(item => {
     delete item["@search.score"];
     return item;
-})
+});
 
+var uniquePairings = [];
+
+for (var i = 0; i < testData.length; i++) {
+    var current = testData[i];
+  
+  if (!current.pairings || !current.pairings.length) {
+      continue;
+  }
+  // console.log(current.pairings);
+  
+  for (var j = 0; j < current.pairings.length; j++) {
+      var currentPairing = current.pairings[j];
+      var winePairing = uniquePairings.find(p => p.name === currentPairing);
+      if(!winePairing) {
+        winePairing = {name: currentPairing}
+        uniquePairings.push(winePairing);
+      }
+
+      if(!winePairing.wines || !winePairing.wines.length) {
+        winePairing.wines = [current.name]
+      }else{
+        winePairing.wines.push(current.name);
+      }
+
+
+  // todo insert currentPairing if it doesn't exist
+  // todo insert current.name (name of wine) as an item of currentPairing
+  }
+}
+
+console.log(uniquePairings);
+/*
 module.exports = {
 seedData: function () {
     db.Wines
@@ -2027,3 +2059,4 @@ seedData: function () {
       });
     }
 }
+*/

@@ -7,6 +7,6 @@ export default {
       return axios.get("https://slosh.io/routes/api/alcohol");
     },
     getFood: function() {
-      return axios.get("https://slosh.io/routes/api/alcohol/" +pairings+ "/" );
+      return axios.get("https://slosh.io/routes/api/alcohol/" + "/" );
     }
     };

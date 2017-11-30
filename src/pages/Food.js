@@ -37,27 +37,29 @@ class UserForm extends React.Component {
 
    responseGoogle(response) {
     console.log(response);
-    console.log("The user's name is " + response.w3.ig)
-    console.log("The user email is " + response.w3.U3)
+    console.log("The user's name is " + response.w3.ig);
+    console.log("The user email is " + response.w3.U3);
    }
 
+   
   render() {
     const { choice } = this.state;
     return (
       <div>
-         <div>
-           <button onClick={() => this.openModal()}>Open modal</button>
-           <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
-            <GoogleLogin
-            clientId="1063825968337-jlrfit23tiqrc36i9rkkbhmgstbdrslm.apps.googleusercontent.com"
-            onSuccess={this.responseGoogle}
-            onFailure={this.responseGoogle}
-            width={240}
-            height={50}
-            longtitle={true}
-          />
-           </Modal>
-         </div>
+        <div>
+          <button onClick={() => this.openModal()}>LOGIN</button>
+            <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
+              <GoogleLogin
+                clientId="1063825968337-jlrfit23tiqrc36i9rkkbhmgstbdrslm.apps.googleusercontent.com"
+                onSuccess={this.responseGoogle}
+                onFailure={this.responseGoogle}
+                width={240}
+                height={50}
+                longtitle={true}
+                isSignedIn
+              />
+            </Modal>
+        </div>
         <div>
           <form onSubmit={this.onSubmit}>
             <label>Select list:</label>

@@ -28,7 +28,10 @@ const welcomStyle = {
   fontSize: "3em",
 }
 const loggedStyle = {
-
+  position: "fixed",
+  top: "0",
+  right: "0",
+  marginTop: "15px"
 }
 const buttonCenter = {
   textAlign: "center",

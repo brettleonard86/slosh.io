@@ -39,7 +39,7 @@ class UserForm extends React.Component {
     super(props);
     this.state = {
       choice: 'Stew',
-      isModalOpen: false,
+      isModalOpen: true,
     };
   }
   onChange = (e) => {
@@ -69,7 +69,8 @@ class UserForm extends React.Component {
     console.log(response);
     console.log("The user's name is " + response.w3.ig);
     console.log("The user email is " + response.w3.U3);
-  }
+    this.setState({ isModalOpen: false });
+  };
 
    
   render() {
@@ -77,12 +78,11 @@ class UserForm extends React.Component {
     return (
       <div>
         <div>
-          <button style={loginStyle} onClick={() => this.openModal()}>LOGIN</button>
             <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
               <GoogleLogin
                 clientId="1063825968337-jlrfit23tiqrc36i9rkkbhmgstbdrslm.apps.googleusercontent.com"
-                onSuccess={this.responseGoogle}
-                onFailure={this.responseGoogle}
+                onSuccess={this.responseGoogle.bind(this)}
+                onFailure={() => console.log(this, arguments)}
                 width={240}
                 height={50}
                 longtitle={true}

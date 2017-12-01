@@ -4,7 +4,6 @@ import GoogleLogin from 'react-google-login';
 import { Link } from "react-router-dom";
 
 const formStyle = {
-  //textAlign: "center",
   marginLeft: "5%",
   marginRight: "5%",
   marginTop: "70px"
@@ -17,6 +16,7 @@ const buttonStyle = {
   color: "white",
   marginTop: "50px"
 }
+let userLogin = "Not Logged In";
 
 const instructionsStyle = {
   textAlign: "center",
@@ -26,6 +26,9 @@ const instructionsStyle = {
 }
 const welcomStyle = {
   fontSize: "3em",
+}
+const loggedStyle = {
+
 }
 const buttonCenter = {
   textAlign: "center",
@@ -41,12 +44,10 @@ class UserForm extends React.Component {
       // userEmail: ""
 =======
       isModalOpen: true,
->>>>>>> d2dc9676c773320d5ab1f38c0da2bd2eb4438cf1
+      userLogin: false
     };
   }
   onChange = (e) => {
-    // Because we named the inputs to match their corresponding values in state, it's
-    // super easy to update the state
     const state = this.state
     state[e.target.name] = e.target.value;
     this.setState(state);
@@ -55,7 +56,6 @@ class UserForm extends React.Component {
   onSubmit = (e) => {
     e.preventDefault();
     console.log(this.state)
-    // get our form data out of state
     const { choice } = this.state;
 
   }
@@ -87,6 +87,8 @@ class UserForm extends React.Component {
     console.log("The user's name is " + response.w3.ig);
     console.log("The user email is " + response.w3.U3);
     this.setState({ isModalOpen: false });
+    userLogin = "Logged in as " + response.w3.ig;
+    this.setState({ userLogin: true })
   };
 >>>>>>> d2dc9676c773320d5ab1f38c0da2bd2eb4438cf1
 
@@ -96,17 +98,20 @@ class UserForm extends React.Component {
     return (
       <div>
         <div>
-            <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
-              <GoogleLogin
-                clientId="1063825968337-jlrfit23tiqrc36i9rkkbhmgstbdrslm.apps.googleusercontent.com"
-                onSuccess={this.responseGoogle.bind(this)}
-                onFailure={() => console.log(this, arguments)}
-                width={240}
-                height={50}
-                longtitle={true}
-                isSignedIn
-              />
-            </Modal>
+          <div style={loggedStyle}>
+            {userLogin}
+          </div>
+          <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
+            <GoogleLogin
+              clientId="1063825968337-jlrfit23tiqrc36i9rkkbhmgstbdrslm.apps.googleusercontent.com"
+              onSuccess={this.responseGoogle.bind(this)}
+              onFailure={() => console.log(this, arguments)}
+              width={240}
+              height={50}
+              longtitle={true}
+              isSignedIn
+            />
+          </Modal>
         </div>
         <div style={instructionsStyle}>
           <div style={welcomStyle}>

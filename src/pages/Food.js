@@ -3,6 +3,7 @@ import Modal from "./Modal";
 import GoogleLogin from 'react-google-login';
 import { Link } from "react-router-dom";
 
+
 const formStyle = {
   //textAlign: "center",
   marginLeft: "5%",
@@ -30,20 +31,17 @@ const welcomStyle = {
 const buttonCenter = {
   textAlign: "center",
 }
+
+
 class UserForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       choice: 'Stew',
-<<<<<<< HEAD
-      isModalOpen: false
-      // userName: "",
-      // userEmail: ""
-=======
       isModalOpen: true,
->>>>>>> d2dc9676c773320d5ab1f38c0da2bd2eb4438cf1
     };
   }
+  
   onChange = (e) => {
     // Because we named the inputs to match their corresponding values in state, it's
     // super easy to update the state
@@ -64,7 +62,6 @@ class UserForm extends React.Component {
     this.setState({ isModalOpen: true })
   }
 
-<<<<<<< HEAD
    responseGoogle(response) {
     var userName = response.w3.ig;
     var userEmail =response.w3.U3;
@@ -78,17 +75,10 @@ class UserForm extends React.Component {
     console.log("The user's name is " + userName);
     console.log("The user email is " + userEmail);
    }
-=======
-  closeModal() {
-   this.setState({ isModalOpen: false })
-  }
-  responseGoogle(response) {
-    console.log(response);
-    console.log("The user's name is " + response.w3.ig);
-    console.log("The user email is " + response.w3.U3);
-    this.setState({ isModalOpen: false });
-  };
->>>>>>> d2dc9676c773320d5ab1f38c0da2bd2eb4438cf1
+
+   closeModal() {
+     this.setState({ isModalOpen:false })
+   }
 
 
   render() {

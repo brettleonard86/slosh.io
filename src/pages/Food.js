@@ -1,14 +1,45 @@
 import React, { Component } from "react";
 import Modal from "./Modal";
 import GoogleLogin from 'react-google-login';
+import { Link } from "react-router-dom";
 
-
+const formStyle = {
+  //textAlign: "center",
+  marginLeft: "5%",
+  marginRight: "5%",
+  marginTop: "20%"
+}
+const buttonStyle = {
+  padding: "2% 5% 2% 5%",
+  border: "solid 1px black",
+  fontSize: "2em",
+  backgroundColor: "black",
+  color: "white",
+  marginLeft: "35%",
+  marginTop: "20%"
+}
+const loginStyle = {
+  padding: "1% 2.5% 1% 2.5%",
+  border: "solid 1px black",
+  backgroundColor: "black",
+  color: "white",
+  marginLeft: "80%",
+}
+const instructionsStyle = {
+  textAlign: "center",
+  fontSize: "2em",
+  marginLeft: "5%",
+  marginRight: "5%"
+}
+const welcomStyle = {
+  fontSize: "3em",
+}
 class UserForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       choice: 'Stew',
-      isModalOpen: false
+      isModalOpen: false,
     };
   }
   onChange = (e) => {
@@ -27,19 +58,18 @@ class UserForm extends React.Component {
 
   }
 
-   openModal() {
-     this.setState({ isModalOpen: true })
-   }
+  openModal() {
+    this.setState({ isModalOpen: true })
+  }
 
-   closeModal() {
-     this.setState({ isModalOpen: false })
-   }
-
-   responseGoogle(response) {
+  closeModal() {
+   this.setState({ isModalOpen: false })
+  }
+  responseGoogle(response) {
     console.log(response);
     console.log("The user's name is " + response.w3.ig);
     console.log("The user email is " + response.w3.U3);
-   }
+  }
 
    
   render() {
@@ -47,7 +77,7 @@ class UserForm extends React.Component {
     return (
       <div>
         <div>
-          <button onClick={() => this.openModal()}>LOGIN</button>
+          <button style={loginStyle} onClick={() => this.openModal()}>LOGIN</button>
             <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
               <GoogleLogin
                 clientId="1063825968337-jlrfit23tiqrc36i9rkkbhmgstbdrslm.apps.googleusercontent.com"
@@ -60,9 +90,15 @@ class UserForm extends React.Component {
               />
             </Modal>
         </div>
+        <div style={instructionsStyle}>
+          <div style={welcomStyle}>
+            Slosh.io
+          </div>
+          <p>The app that pairs wine based on food</p>
+        </div>
         <div>
-          <form onSubmit={this.onSubmit}>
-            <label>Select list:</label>
+          <form style={formStyle} onSubmit={this.onSubmit}>
+            <label>Select your dish:</label>
             <select name="choice" className="form-control" id="sel1" onChange={this.onChange}>
               <option>Stew</option>
               <option value="Pasta Red Sauce">Pasta (Red Sauce)</option>
@@ -83,7 +119,9 @@ class UserForm extends React.Component {
               <option>Sushi</option>
               <option>Salad</option>
             </select>
-            <button type="submit">Submit</button>
+            <button style={buttonStyle} type="Submit">
+              Submit
+            </button>
           </form>
         </div>
       </div>

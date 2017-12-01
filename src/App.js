@@ -10,13 +10,13 @@ import Wrapper from "./components/Wrapper";
 const App = () =>
   <Router>
     <div>
-      <Navbar />
+      <Navbar/>
       <Wrapper>
         <Route exact path="/" component={UserForm} />
         <Route exact path="/Food" component={UserForm} />
         <Route exact path="/Wine" component={Wine} />
       </Wrapper>
-      <Footer />
+      <Footer/>
     </div>
   </Router>;
 

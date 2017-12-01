@@ -7,7 +7,7 @@ const formStyle = {
   //textAlign: "center",
   marginLeft: "5%",
   marginRight: "5%",
-  marginTop: "20%"
+  marginTop: "70px"
 }
 const buttonStyle = {
   padding: "2% 5% 2% 5%",
@@ -15,16 +15,9 @@ const buttonStyle = {
   fontSize: "2em",
   backgroundColor: "black",
   color: "white",
-  marginLeft: "35%",
-  marginTop: "20%"
+  marginTop: "50px"
 }
-const loginStyle = {
-  padding: "1% 2.5% 1% 2.5%",
-  border: "solid 1px black",
-  backgroundColor: "black",
-  color: "white",
-  marginLeft: "80%",
-}
+
 const instructionsStyle = {
   textAlign: "center",
   fontSize: "2em",
@@ -33,6 +26,9 @@ const instructionsStyle = {
 }
 const welcomStyle = {
   fontSize: "3em",
+}
+const buttonCenter = {
+  textAlign: "center",
 }
 class UserForm extends React.Component {
   constructor(props) {
@@ -119,9 +115,11 @@ class UserForm extends React.Component {
               <option>Sushi</option>
               <option>Salad</option>
             </select>
-            <button style={buttonStyle} type="Submit">
-              Submit
-            </button>
+            <div style={buttonCenter}>
+              <button style={buttonStyle} type="Submit">
+                Submit
+              </button>
+            </div>
           </form>
         </div>
       </div>

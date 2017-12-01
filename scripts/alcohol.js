@@ -2031,9 +2031,9 @@ for (var i = 0; i < testData.length; i++) {
       }
 
       if(!winePairing.wines || !winePairing.wines.length) {
-        winePairing.wines = [current.name]
+        winePairing.wines = [pairingTables(current)];
       }else{
-        winePairing.wines.push(current.name);
+        winePairing.wines.push(pairingTables(current));
       }
 
 
@@ -2041,14 +2041,32 @@ for (var i = 0; i < testData.length; i++) {
   // todo insert current.name (name of wine) as an item of currentPairing
   }
 }
-
-console.log(uniquePairings);
-/*
+        function pairingTables (current){
+       return {
+          name: current.name,
+          longDescription: current.longDescription,
+          wineType: current.wineType,
+          wineBrand: current.wineBrand,
+          varietal: current.varietal,
+          originCountry: current.originCountry,
+          price: current.price,
+          pairings: current.pairings,
+          body: current.body,
+          descriptorFlavor: current.descriptorFlavor,
+          descriptorUnique: current.descriptorUnique,
+          descriptorStructure: current.descriptorStructure,
+          descriptor_structure: current.descriptor_structure,
+          how_to_serve: current.how_to_serve,
+          sweetness: current.sweetness,
+          tasting_note: current.tasting_note,
+        }
+    }
+//console.log(JSON.stringify(uniquePairings));
 module.exports = {
 seedData: function () {
     db.Wines
       .remove({})
-      .then(() => db.Wines.collection.insertMany(testData))
+      .then(() => db.Wines.collection.insertMany(uniquePairings))
       .then(data => {
         console.log(data.insertedIds.length + " records inserted!");
         process.exit(0);
@@ -2059,4 +2077,3 @@ seedData: function () {
       });
     }
 }
-*/

@@ -1,3 +1,3 @@
 module.exports = {
-  Wines: require("./wines")
+  Wines: require("./result")
 };

@@ -8,12 +8,12 @@ module.exports ={
 		.find(req.query)
 		.then(dbModel => res.json(dbModel))
 		.catch(err => res.status(422).json(err));
-	},
-	findAllPairings: function(req, res) {
+	}//,
+/*	findAllPairings: function(req, res) {
 		db.Wines
 		.find({"pairings" : req.params.pairings})
 		.then(dbModel => res.json(dbModel))
 		.catch(err => res.status(422).json(err));
-	}
+	}*/
 
 }

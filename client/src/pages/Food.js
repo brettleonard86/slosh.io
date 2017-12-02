@@ -100,6 +100,12 @@ class UserForm extends React.Component {
             {userLogin}
           </div>
           <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
+            <div style={instructionsStyle}>
+              <div style={welcomStyle}>
+                Slosh.io
+              </div>
+              <p>Finding the right drink for your food</p>
+            </div>
             <GoogleLogin
               clientId="1063825968337-jlrfit23tiqrc36i9rkkbhmgstbdrslm.apps.googleusercontent.com"
               onSuccess={this.responseGoogle.bind(this)}
@@ -111,15 +117,11 @@ class UserForm extends React.Component {
             />
           </Modal>
         </div>
-        <div style={instructionsStyle}>
-          <div style={welcomStyle}>
-            Slosh.io
-          </div>
-          <p>Finding the right drink for your food</p>
-        </div>
         <div>
+          <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+          <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">What's Cooking?</span>
           <form style={formStyle} onSubmit={this.onSubmit}>
-            <label>Select your dish:</label>
             <select name="choice" className="form-control" id="sel1" onChange={this.onChange}>
               <option>Stew</option>
               <option value="Pasta Red Sauce">Pasta (Red Sauce)</option>
@@ -146,6 +148,8 @@ class UserForm extends React.Component {
               </button>
             </div>
           </form>
+        </div>
+      </div>
         </div>
       </div>
     );

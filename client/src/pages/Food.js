@@ -35,6 +35,14 @@ const loggedStyle = {
   right: "0",
   marginTop: "15px"
 }
+const imageStyle = {
+  width: "30%",
+  height: "30%",
+  borderRadius: "50%"
+}
+const logoutButton = {
+
+}
 const buttonCenter = {
   textAlign: "center",
 }
@@ -113,7 +121,7 @@ class UserForm extends React.Component {
       <div>
         <div>
           <div style={loggedStyle}>
-            <img src={userLogin}/>
+            <img style={imageStyle} src={userLogin}/>
           </div>
           <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
             <GoogleLogin
@@ -127,7 +135,7 @@ class UserForm extends React.Component {
             />
           </Modal>
         </div>
-        <GoogleLogout
+        <GoogleLogout style={logoutButton}
           onLogoutSuccess={this.logout.bind(this)}
         >
         </GoogleLogout>

@@ -18,7 +18,7 @@ const buttonStyle = {
   color: "white",
   marginTop: "50px"
 }
-let userLogin = "Not Logged In";
+let userLogin ='' ;
 
 const instructionsStyle = {
   textAlign: "center",
@@ -91,8 +91,9 @@ class UserForm extends React.Component {
     console.log("The user's name is " + userName);
     console.log("The user email is " + userEmail);
     this.setState({ isModalOpen: false });
-    userLogin = "Logged in as " + response.w3.ig;
+    userLogin = response.profileObj.imageUrl;
     this.setState({ userLogin: true })
+
    }
   logout() {
     this.setState({ isModalOpen: true });
@@ -112,7 +113,7 @@ class UserForm extends React.Component {
       <div>
         <div>
           <div style={loggedStyle}>
-            {userLogin}
+            <img src={userLogin}/>
           </div>
           <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
             <GoogleLogin

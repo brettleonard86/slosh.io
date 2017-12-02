@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Modal from "./Modal";
 import GoogleLogin from 'react-google-login';
 import { Link } from "react-router-dom";
+import API from "../utils/API";
 
 
 const formStyle = {
@@ -76,8 +77,17 @@ class UserForm extends React.Component {
       name: userName,
       email: userEmail
     }
+
+    API.createUser(user)
+      .then(function (response) {
+        console.log("createUser", response);
+      })
+      .catch(function (error) {
+        console.log("createUser", error);
+      });
+
     console.log({accessToken: id_token});
-    console.log(response);
+    //console.log(response);
     console.log("The user's name is " + userName);
     console.log("The user email is " + userEmail);
     this.setState({ isModalOpen: false });

@@ -28,6 +28,10 @@ mongoose.connect(
 	}
 );
 
+mongoose.connection.on("connected", function(){
+	console.log("mongo is connected");
+})
+
 //alcohol.seedData();
 
 // Listen on the port

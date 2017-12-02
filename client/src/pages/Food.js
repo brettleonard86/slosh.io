@@ -116,12 +116,6 @@ class UserForm extends React.Component {
             {userLogin}
           </div>
           <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
-            <div style={instructionsStyle}>
-              <div style={welcomStyle}>
-                Slosh.io
-              </div>
-              <p>Finding the right drink for your food</p>
-            </div>
             <GoogleLogin
               clientId="1063825968337-jlrfit23tiqrc36i9rkkbhmgstbdrslm.apps.googleusercontent.com"
               onSuccess={this.responseGoogle.bind(this)}
@@ -133,20 +127,6 @@ class UserForm extends React.Component {
             />
           </Modal>
         </div>
-<<<<<<< HEAD
-=======
-        <div style={instructionsStyle}>
-          <div style={welcomStyle}>
-            Slosh.io
-          </div>
-          <p>Finding the right drink for your food</p>
-        </div>
-        <GoogleLogout
-          buttonText="Logout"
-          onLogoutSuccess={this.logout.bind(this)}
-        >
-        </GoogleLogout>
->>>>>>> 5f2da87400121ba7cac130cf821d7a20104fc74e
         <div>
           <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
           <div class="mdl-layout__drawer">

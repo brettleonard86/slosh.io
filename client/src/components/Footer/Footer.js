@@ -23,7 +23,7 @@ const Footer = () =>
   <div style={phantom}>
   </div>
   <div style={footerStyle}>
-    <span>Slosh.io 2017</span>
+    <span></span>
   </div>
 </div>;
 

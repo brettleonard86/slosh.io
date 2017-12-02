@@ -51,7 +51,7 @@ class UserForm extends React.Component {
       userLogin: false
     };
   }
-  
+
   onChange = (e) => {
     const state = this.state
     state[e.target.name] = e.target.value;
@@ -125,7 +125,7 @@ class UserForm extends React.Component {
           <div style={welcomStyle}>
             Slosh.io
           </div>
-          <p>The app that pairs wine based on food</p>
+          <p>Finding the right drink for your food</p>
         </div>
         <div>
           <form style={formStyle} onSubmit={this.onSubmit}>

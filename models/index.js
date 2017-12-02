@@ -1,3 +1,4 @@
 module.exports = {
-  Wines: require("./pairings")
+  Wines: require("./pairings"),
+  User: require("./user")
 };

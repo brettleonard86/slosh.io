@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import Modal from "./Modal";
 import GoogleLogin from 'react-google-login';
+import { GoogleLogout } from 'react-google-login';
 import { Link } from "react-router-dom";
+import API from "../utils/API";
 
 
 const formStyle = {
@@ -76,14 +78,28 @@ class UserForm extends React.Component {
       name: userName,
       email: userEmail
     }
+
+    API.createUser(user)
+      .then(function (response) {
+        console.log("createUser", response);
+      })
+      .catch(function (error) {
+        console.log("createUser", error);
+      });
+
     console.log({accessToken: id_token});
-    console.log(response);
+    //console.log(response);
     console.log("The user's name is " + userName);
     console.log("The user email is " + userEmail);
     this.setState({ isModalOpen: false });
     userLogin = "Logged in as " + response.w3.ig;
     this.setState({ userLogin: true })
    }
+  logout() {
+    this.setState({ isModalOpen: true });
+    userLogin = "Not logged in";
+    this.setState({userLogin: false})
+  }
 
   closeModal() {
    this.setState({ isModalOpen: false })
@@ -117,6 +133,20 @@ class UserForm extends React.Component {
             />
           </Modal>
         </div>
+<<<<<<< HEAD
+=======
+        <div style={instructionsStyle}>
+          <div style={welcomStyle}>
+            Slosh.io
+          </div>
+          <p>Finding the right drink for your food</p>
+        </div>
+        <GoogleLogout
+          buttonText="Logout"
+          onLogoutSuccess={this.logout.bind(this)}
+        >
+        </GoogleLogout>
+>>>>>>> 5f2da87400121ba7cac130cf821d7a20104fc74e
         <div>
           <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
           <div class="mdl-layout__drawer">

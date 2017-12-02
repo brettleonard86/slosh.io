@@ -8,5 +8,8 @@ export default {
     },
     getFood: function() {
       return axios.get("https://slosh.io/routes/api/alcohol/" + "/" );
+    },
+    createUser: function(user) {
+      return axios.post("/api/user", user);
     }
     };

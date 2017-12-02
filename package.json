@@ -11,7 +11,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js && cd client && yarn start"
+    "start": "npm i && cd client && npm i && npm run-script build && cd .. && node server.js"
   },
   "author": "",
   "license": "ISC"

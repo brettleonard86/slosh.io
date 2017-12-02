@@ -9,9 +9,7 @@ const navStyle= {
 const Navbar = props =>
 
   <nav style={navStyle} className="navbar navbar-default">
-    <div className="container-fluid">
-      <Link className="navbar-brand" to="/">Slosh.io</Link>
-    </div>
+
   </nav>;
 
 export default Navbar;

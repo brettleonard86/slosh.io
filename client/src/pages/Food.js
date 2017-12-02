@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Modal from "./Modal";
 import GoogleLogin from 'react-google-login';
+import { GoogleLogout } from 'react-google-login';
 import { Link } from "react-router-dom";
 
 
@@ -84,6 +85,11 @@ class UserForm extends React.Component {
     userLogin = "Logged in as " + response.w3.ig;
     this.setState({ userLogin: true })
    }
+  logout() {
+    this.setState({ isModalOpen: true });
+    userLogin = "Not logged in";
+    this.setState({userLogin: false})
+  }
 
   closeModal() {
    this.setState({ isModalOpen: false })
@@ -117,6 +123,11 @@ class UserForm extends React.Component {
           </div>
           <p>The app that pairs wine based on food</p>
         </div>
+        <GoogleLogout
+          buttonText="Logout"
+          onLogoutSuccess={this.logout.bind(this)}
+        >
+        </GoogleLogout>
         <div>
           <form style={formStyle} onSubmit={this.onSubmit}>
             <label>Select your dish:</label>

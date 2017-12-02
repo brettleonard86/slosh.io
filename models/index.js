@@ -1,3 +1,3 @@
 module.exports = {
-  Wines: require("./result")
+  Wines: require("./pairings")
 };

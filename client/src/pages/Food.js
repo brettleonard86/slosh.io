@@ -44,7 +44,7 @@ class UserForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      choice: 'Stew',
+      choice: "",
       // userName: "",
       // userEmail: ""
       isModalOpen: true,
@@ -61,8 +61,18 @@ class UserForm extends React.Component {
   onSubmit = (e) => {
     e.preventDefault();
     console.log(this.state)
-    const { choice } = this.state;
+    //const { choice } = this.state;
+    //if({ choice } === API.getWineList.name){
+    //res.getWineList.wines[0];
+   //}
 
+  }
+
+  foodResult(response) {
+    if(onSubmit.choice === API.getWineList.name){
+    response.getWineList.wines[0];
+   }
+   console.log(response)
   }
 
   openModal() {
@@ -103,7 +113,6 @@ class UserForm extends React.Component {
   closeModal() {
    this.setState({ isModalOpen: false })
   }
-
 
 
   render() {

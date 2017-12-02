@@ -5,7 +5,6 @@ import { GoogleLogout } from 'react-google-login';
 import { Link } from "react-router-dom";
 import API from "../utils/API";
 
-
 const formStyle = {
   marginLeft: "5%",
   marginRight: "5%",
@@ -127,6 +126,10 @@ class UserForm extends React.Component {
             />
           </Modal>
         </div>
+        <GoogleLogout
+          onLogoutSuccess={this.logout.bind(this)}
+        >
+        </GoogleLogout>
         <div>
           <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
           <div class="mdl-layout__drawer">

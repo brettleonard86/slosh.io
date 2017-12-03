@@ -69,19 +69,21 @@ class UserForm extends React.Component {
   onSubmit = (e) => {
     e.preventDefault();
     console.log(this.state)
-    //const { choice } = this.state;
-    //if({ choice } === API.getWineList.name){
-    //res.getWineList.wines[0];
+    console.log(API.getFood({choice}))
+    const { choice } = this.state;
+    //if({ choice } === API.getFood({choice})){
+    //console.log();
    //}
 
   }
 
+/*
   foodResult(response) {
     if(onSubmit.choice === API.getWineList.name){
     response.getWineList.wines[0];
    }
    console.log(response)
-  }
+  }*/
 
   openModal() {
     this.setState({ isModalOpen: true })

@@ -76,12 +76,12 @@ class UserForm extends React.Component {
 
   }
 
-  foodResult(response) {
-    if(onSubmit.choice === API.getWineList.name){
-    response.getWineList.wines[0];
-   }
-   console.log(response)
-  }
+  // foodResult(response) {
+  //   if(onSubmit.choice === API.getWineList.name){
+  //   response.getWineList.wines[0];
+  //  }
+  //  console.log(response)
+  // }
 
   openModal() {
     this.setState({ isModalOpen: true })
@@ -149,8 +149,8 @@ class UserForm extends React.Component {
         >
         </GoogleLogout>
         <div>
-          <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
-          <div class="mdl-layout__drawer">
+          <div className="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+          <div className="mdl-layout__drawer">
             <span class="mdl-layout-title">What's Cooking?</span>
           <form style={formStyle} onSubmit={this.onSubmit}>
             <select name="choice" className="form-control" id="sel1" onChange={this.onChange}>

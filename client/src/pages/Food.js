@@ -73,9 +73,10 @@ class UserForm extends React.Component {
     const { choice } = this.state;
     //if({ choice } === API.getFood({choice})){
     //console.log();
+
    //}
 
-  }
+ }
 
 /*
   foodResult(response) {
@@ -107,7 +108,7 @@ class UserForm extends React.Component {
       });
 
     console.log({accessToken: id_token});
-    //console.log(response);
+    console.log(response);
     console.log("The user's name is " + userName);
     console.log("The user email is " + userEmail);
     this.setState({ isModalOpen: false });
@@ -151,38 +152,61 @@ class UserForm extends React.Component {
         >
         </GoogleLogout>
         <div>
-          <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
-          <div class="mdl-layout__drawer">
-            <span class="mdl-layout-title">What's Cooking?</span>
-          <form style={formStyle} onSubmit={this.onSubmit}>
-            <select name="choice" className="form-control" id="sel1" onChange={this.onChange}>
-              <option>Stew</option>
-              <option value="Pasta Red Sauce">Pasta (Red Sauce)</option>
-              <option value="Pasta Cream Sauce">Pasta (White Sauce)</option>
-              <option>Cured Meats</option>
-              <option>Poultry</option>
-              <option>Pork</option>
-              <option>Cheeses</option>
-              <option>Fruits</option>
-              <option>Chocolate Cake</option>
-              <option>Burgers</option>
-              <option>BBQ</option>
-              <option>Ribs</option>
-              <option value="Veggies">Vegetables</option>
-              <option>Pizza</option>
-              <option value="Chilli">Chili</option>
-              <option>Fries</option>
-              <option>Sushi</option>
-              <option>Salad</option>
-            </select>
-            <div style={buttonCenter}>
-              <button style={buttonStyle} type="Submit">
-                Submit
-              </button>
+
+          <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
+                      mdl-layout--fixed-header">
+            <header class="mdl-layout__header">
+              <div class="mdl-layout__header-row">
+                <div class="mdl-layout-spacer"></div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                            mdl-textfield--floating-label mdl-textfield--align-right">
+                  <label class="mdl-button mdl-js-button mdl-button--icon"
+                         for="fixed-header-drawer-exp">
+                    <i class="material-icons">search</i>
+                  </label>
+                  <div class="mdl-textfield__expandable-holder">
+
+                  </div>
+                </div>
+              </div>
+            </header>
+            <div class="mdl-layout__drawer">
+              <span class="mdl-layout-title">Title</span>
+              <span class="mdl-layout-title">What's Cooking?</span>
+            <form style={formStyle} onSubmit={this.onSubmit}>
+              <select name="choice" className="form-control" id="sel1" onChange={this.onChange}>
+                <option>Stew</option>
+                <option value="Pasta Red Sauce">Pasta (Red Sauce)</option>
+                <option value="Pasta Cream Sauce">Pasta (White Sauce)</option>
+                <option>Cured Meats</option>
+                <option>Poultry</option>
+                <option>Pork</option>
+                <option>Cheeses</option>
+                <option>Fruits</option>
+                <option>Chocolate Cake</option>
+                <option>Burgers</option>
+                <option>BBQ</option>
+                <option>Ribs</option>
+                <option value="Veggies">Vegetables</option>
+                <option>Pizza</option>
+                <option value="Chilli">Chili</option>
+                <option>Fries</option>
+                <option>Sushi</option>
+                <option>Salad</option>
+              </select>
+              <div style={buttonCenter}>
+                <button style={buttonStyle} type="Submit">
+                  Submit
+                </button>
+              </div>
+            </form>
             </div>
-          </form>
-        </div>
-      </div>
+            <main class="mdl-layout__content">
+              <div class="page-content"></div>
+            </main>
+          </div>
+
+
         </div>
       </div>
     );

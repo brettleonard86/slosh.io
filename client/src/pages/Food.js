@@ -18,7 +18,7 @@ const buttonStyle = {
   color: "white",
   marginTop: "50px"
 }
-let userLogin = "Not Logged In";
+let userLogin ='' ;
 
 const instructionsStyle = {
   textAlign: "center",
@@ -35,6 +35,14 @@ const loggedStyle = {
   right: "0",
   marginTop: "15px"
 }
+const imageStyle = {
+  width: "30%",
+  height: "30%",
+  borderRadius: "50%"
+}
+const logoutButton = {
+
+}
 const buttonCenter = {
   textAlign: "center",
 }
@@ -44,7 +52,7 @@ class UserForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      choice: 'Stew',
+      choice: "",
       // userName: "",
       // userEmail: ""
       isModalOpen: true,
@@ -61,8 +69,18 @@ class UserForm extends React.Component {
   onSubmit = (e) => {
     e.preventDefault();
     console.log(this.state)
-    const { choice } = this.state;
+    //const { choice } = this.state;
+    //if({ choice } === API.getWineList.name){
+    //res.getWineList.wines[0];
+   //}
 
+  }
+
+  foodResult(response) {
+    if(onSubmit.choice === API.getWineList.name){
+    response.getWineList.wines[0];
+   }
+   console.log(response)
   }
 
   openModal() {
@@ -91,8 +109,9 @@ class UserForm extends React.Component {
     console.log("The user's name is " + userName);
     console.log("The user email is " + userEmail);
     this.setState({ isModalOpen: false });
-    userLogin = "Logged in as " + response.w3.ig;
+    userLogin = response.profileObj.imageUrl;
     this.setState({ userLogin: true })
+
    }
   logout() {
     this.setState({ isModalOpen: true });
@@ -105,14 +124,13 @@ class UserForm extends React.Component {
   }
 
 
-
   render() {
     const { choice } = this.state;
     return (
       <div>
         <div>
           <div style={loggedStyle}>
-            {userLogin}
+            <img style={imageStyle} src={userLogin}/>
           </div>
           <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
             <GoogleLogin
@@ -126,7 +144,7 @@ class UserForm extends React.Component {
             />
           </Modal>
         </div>
-        <GoogleLogout
+        <GoogleLogout style={logoutButton}
           onLogoutSuccess={this.logout.bind(this)}
         >
         </GoogleLogout>

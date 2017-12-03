@@ -87,7 +87,7 @@ class UserForm extends React.Component {
       });
 
     console.log({accessToken: id_token});
-    //console.log(response);
+    console.log(response);
     console.log("The user's name is " + userName);
     console.log("The user email is " + userEmail);
     this.setState({ isModalOpen: false });

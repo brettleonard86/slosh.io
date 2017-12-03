@@ -6,8 +6,8 @@ export default {
   getWineList: function() {
       return axios.get("https://slosh.io/routes/api/alcohol");
     },
-    getFood: function() {
-      return axios.get("https://slosh.io/routes/api/alcohol/" + "/" );
+    getFood: function(food) {
+      return axios.get("https://slosh.io/routes/api/alcohol/" + food + "/" );
     },
     createUser: function(user) {
       return axios.post("/api/user", user);

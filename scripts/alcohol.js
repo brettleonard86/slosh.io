@@ -2069,7 +2069,7 @@ seedData: function () {
       .then(() => db.Wines.collection.insertMany(uniquePairings))
       .then(data => {
         console.log(data.insertedIds.length + " records inserted!");
-        process.exit(0);
+        //process.exit(0);
       })
       .catch(err => {
         console.error(err);

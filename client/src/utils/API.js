@@ -4,10 +4,10 @@ import axios from "axios";
 
 export default {
   getWineList: function() {
-      return axios.get("https://slosh.io/routes/api/alcohol");
+      return axios.get("/api/alcohol");
     },
-    getFood: function(food) {
-      return axios.get("https://slosh.io/routes/api/alcohol/" + food + "/" );
+    getFood: function(wine) {
+      return axios.get("/api/alcohol/", wine);
     },
     createUser: function(user) {
       return axios.post("/api/user", user);

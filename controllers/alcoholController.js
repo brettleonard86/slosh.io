@@ -10,10 +10,11 @@ module.exports ={
 		.catch(err => res.status(422).json(err));
 	},
 	findAllPairings: function(req, res) {
-		db.Wines
-		.find({"name" : req.params.name})
-		.then(dbModel => res.json(dbModel))
-		.catch(err => res.status(422).json(err));
+		console.log("alcohol controller", req)
+		// db.Wines
+		// .find(req.params.name)
+		// .then(dbModel => res.json(dbModel))
+		// .catch(err => res.status(422).json(err));
 	}
 
 }

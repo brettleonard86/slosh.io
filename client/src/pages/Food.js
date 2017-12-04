@@ -4,6 +4,7 @@ import GoogleLogin from 'react-google-login';
 import { GoogleLogout } from 'react-google-login';
 import { Link } from "react-router-dom";
 import API from "../utils/API";
+import ReactFontFace from 'react-font-face'
 
 const formStyle = {
   marginLeft: "5%",
@@ -130,8 +131,8 @@ class UserForm extends React.Component {
                                   clientId="1063825968337-jlrfit23tiqrc36i9rkkbhmgstbdrslm.apps.googleusercontent.com"
                                   onSuccess={this.responseGoogle.bind(this)}
                                   onFailure={() => console.log(this, arguments)}
-                                  width={240}
-                                  height={50}
+                                  width={220}
+                                  height={30}
                                   longtitle={true}
                                   isSignedIn
                                 />
@@ -148,7 +149,7 @@ class UserForm extends React.Component {
               </div>
             </header>
             <div class="mdl-layout__drawer">
-              <span class="mdl-layout-title">What's Cooking?</span>
+              <span class="mdl-layout-title">Slosh.io</span>
             <form style={formStyle} onSubmit={this.onSubmit}>
               <select name="choice" className="form-control" id="sel1" onChange={this.onChange}>
                 <option>Stew</option>

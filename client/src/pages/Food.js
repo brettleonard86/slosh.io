@@ -120,6 +120,17 @@ class UserForm extends React.Component {
     return (
       <div>
         <div>
+        <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
+          <GoogleLogin
+            clientId="1063825968337-jlrfit23tiqrc36i9rkkbhmgstbdrslm.apps.googleusercontent.com"
+            onSuccess={this.responseGoogle.bind(this)}
+            onFailure={() => console.log(this, arguments)}
+            width={220}
+            height={30}
+            longtitle={true}
+            isSignedIn
+            />
+          </Modal>
           <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
                       mdl-layout--fixed-header">
             <header style={headerColor} class="mdl-layout__header">
@@ -131,17 +142,6 @@ class UserForm extends React.Component {
                               <div style={loggedStyle}>
                                 <img style={imageStyle} src={userLogin}/>
                               </div>
-                              <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
-                                <GoogleLogin
-                                  clientId="1063825968337-jlrfit23tiqrc36i9rkkbhmgstbdrslm.apps.googleusercontent.com"
-                                  onSuccess={this.responseGoogle.bind(this)}
-                                  onFailure={() => console.log(this, arguments)}
-                                  width={220}
-                                  height={30}
-                                  longtitle={true}
-                                  isSignedIn
-                                />
-                              </Modal>
                             </div>
                             <GoogleLogout
                               onLogoutSuccess={this.logout.bind(this)}

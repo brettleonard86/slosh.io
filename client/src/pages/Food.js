@@ -38,10 +38,12 @@ const loggedStyle = {
 const imageStyle = {
   width: "30%",
   height: "30%",
-  borderRadius: "50%"
+  borderRadius: "50%",
+  marginRight: "15px",
+  marginTop: "-3.5px"
 }
-const logoutButton = {
-
+const headerColor = {
+  backgroundColor: "#bd4747"
 }
 const buttonCenter = {
   textAlign: "center",
@@ -68,45 +70,21 @@ class UserForm extends React.Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    console.log("submit choice", this.state)
-    //console.log(getFood({choice}))
+    console.log(this.state)
     const { choice } = this.state;
-    //if({ choice } === API.getFood({choice})){
-    //console.log();
-
-   //}
-
-   API.getFood()
-   .then(function (response) {
-     console.log("API getFood", response);
-   })
-   .catch(function (error) {
-     console.log("getFood error", error);
-   });
-
  }
-
-/*
-  foodResult(response) {
-    if(onSubmit.choice === API.getWineList.name){
-    response.getWineList.wines[0];
-   }
-   console.log(response)
-  }*/
 
   openModal() {
     this.setState({ isModalOpen: true })
   }
-
-  responseGoogle(response) {
-  var userName = response.w3.ig;
-  var userEmail =response.w3.U3;
-  var id_token = response.getAuthResponse().id_token;
-  var user = {
-    name: userName,
-    email: userEmail
-  }
-
+   responseGoogle(response) {
+    var userName = response.w3.ig;
+    var userEmail =response.w3.U3;
+    var id_token = response.getAuthResponse().id_token;
+    var user = {
+      name: userName,
+      email: userEmail
+    }
     API.createUser(user)
       .then(function (response) {
         console.log("createUser", response);
@@ -122,56 +100,47 @@ class UserForm extends React.Component {
     this.setState({ isModalOpen: false });
     userLogin = response.profileObj.imageUrl;
     this.setState({ userLogin: true })
-
    }
   logout() {
     this.setState({ isModalOpen: true });
     userLogin = "Not logged in";
     this.setState({userLogin: false})
   }
-
   closeModal() {
    this.setState({ isModalOpen: false })
   }
-
-
   render() {
     const { choice } = this.state;
     return (
       <div>
         <div>
-          <div style={loggedStyle}>
-            <img style={imageStyle} src={userLogin}/>
-          </div>
-          <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
-            <GoogleLogin
-              clientId="1063825968337-jlrfit23tiqrc36i9rkkbhmgstbdrslm.apps.googleusercontent.com"
-              onSuccess={this.responseGoogle.bind(this)}
-              onFailure={() => console.log(this, arguments)}
-              width={240}
-              height={50}
-              longtitle={true}
-              isSignedIn
-            />
-          </Modal>
-        </div>
-        <GoogleLogout style={logoutButton}
-          onLogoutSuccess={this.logout.bind(this)}
-        >
-        </GoogleLogout>
-        <div>
-
           <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
                       mdl-layout--fixed-header">
-            <header class="mdl-layout__header">
+            <header style={headerColor} class="mdl-layout__header">
               <div class="mdl-layout__header-row">
                 <div class="mdl-layout-spacer"></div>
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
                             mdl-textfield--floating-label mdl-textfield--align-right">
-                  <label class="mdl-button mdl-js-button mdl-button--icon"
-                         for="fixed-header-drawer-exp">
-                    <i class="material-icons">search</i>
-                  </label>
+                            <div>
+                              <div style={loggedStyle}>
+                                <img style={imageStyle} src={userLogin}/>
+                              </div>
+                              <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
+                                <GoogleLogin
+                                  clientId="1063825968337-jlrfit23tiqrc36i9rkkbhmgstbdrslm.apps.googleusercontent.com"
+                                  onSuccess={this.responseGoogle.bind(this)}
+                                  onFailure={() => console.log(this, arguments)}
+                                  width={240}
+                                  height={50}
+                                  longtitle={true}
+                                  isSignedIn
+                                />
+                              </Modal>
+                            </div>
+                            <GoogleLogout
+                              onLogoutSuccess={this.logout.bind(this)}
+                            >
+                            </GoogleLogout>
                   <div class="mdl-textfield__expandable-holder">
 
                   </div>
@@ -179,7 +148,6 @@ class UserForm extends React.Component {
               </div>
             </header>
             <div class="mdl-layout__drawer">
-              <span class="mdl-layout-title">Title</span>
               <span class="mdl-layout-title">What's Cooking?</span>
             <form style={formStyle} onSubmit={this.onSubmit}>
               <select name="choice" className="form-control" id="sel1" onChange={this.onChange}>
@@ -202,19 +170,12 @@ class UserForm extends React.Component {
                 <option>Sushi</option>
                 <option>Salad</option>
               </select>
-              <div style={buttonCenter}>
-                <button style={buttonStyle} type="Submit">
-                  Submit
-                </button>
+              </form>
               </div>
-            </form>
-            </div>
             <main class="mdl-layout__content">
               <div class="page-content"></div>
             </main>
           </div>
-
-
         </div>
       </div>
     );
@@ -222,39 +183,3 @@ class UserForm extends React.Component {
 }
 
 export default UserForm;
-
-
-
-// function onSignIn(googleUser) {
-//   var profile = googleUser.getBasicProfile();
-//   // console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-//   console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-//   console.log('Name: ' + profile.getName());
-//   console.log('Image URL: ' + profile.getImageUrl());
-//   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-// }
-
-// function onFailure(error) {
-//   console.log(error);
-// }
-
-// function renderButton() {
-//   gapi.signin2.render('my-signin2', {
-//     'scope': 'profile email',
-//     'width': 240,
-//     'height': 50,
-//     'longtitle': true,
-//     'theme': 'dark',
-//     'onsuccess': onSuccess,
-//     'onfailure': onFailure
-//   });
-// }
-
-
-// Sign out code from Google.
-// function signOut() {
-//   var auth2 = gapi.auth2.getAuthInstance();
-//   auth2.signOut().then(function () {
-//     console.log('User signed out.');
-//   });
-// }

@@ -131,24 +131,19 @@ class UserForm extends React.Component {
             isSignedIn
             />
           </Modal>
-          <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
-                      mdl-layout--fixed-header">
+          <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
             <header style={headerColor} class="mdl-layout__header">
               <div class="mdl-layout__header-row">
                 <div class="mdl-layout-spacer"></div>
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
-                            mdl-textfield--floating-label mdl-textfield--align-right">
-                            <div>
-                              <div style={loggedStyle}>
-                                <img style={imageStyle} src={userLogin}/>
-                              </div>
-                            </div>
-                            <GoogleLogout
-                              onLogoutSuccess={this.logout.bind(this)}
-                            >
-                            </GoogleLogout>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+                  <div>
+                    <div style={loggedStyle}>
+                      <img style={imageStyle} src={userLogin}/>
+                    </div>
+                  </div>
+                  <GoogleLogout onLogoutSuccess={this.logout.bind(this)}>
+                    </GoogleLogout>
                   <div class="mdl-textfield__expandable-holder">
-
                   </div>
                 </div>
               </div>

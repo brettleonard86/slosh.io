@@ -50,7 +50,6 @@ const buttonCenter = {
   textAlign: "center",
 }
 
-
 class UserForm extends React.Component {
   constructor(props) {
     super(props);
@@ -73,11 +72,13 @@ class UserForm extends React.Component {
     e.preventDefault();
     console.log(this.state)
     const { choice } = this.state;
+    console.log({ choice })
  }
 
   openModal() {
     this.setState({ isModalOpen: true })
   }
+
    responseGoogle(response) {
     var userName = response.w3.ig;
     var userEmail =response.w3.U3;
@@ -86,30 +87,34 @@ class UserForm extends React.Component {
       name: userName,
       email: userEmail
     }
-    API.createUser(user)
-      .then(function (response) {
-        console.log("createUser", response);
-      })
-      .catch(function (error) {
-        console.log("createUser", error);
-      });
 
-    console.log({accessToken: id_token});
-    console.log(response);
-    console.log("The user's name is " + userName);
-    console.log("The user email is " + userEmail);
-    this.setState({ isModalOpen: false });
-    userLogin = response.profileObj.imageUrl;
-    this.setState({ userLogin: true })
+  API.createUser(user)
+    .then(function (response) {
+      console.log("createUser", response);
+    })
+    .catch(function (error) {
+      console.log("createUser", error);
+    });
+
+  console.log({accessToken: id_token});
+  console.log(response);
+  console.log("The user's name is " + userName);
+  console.log("The user email is " + userEmail);
+  this.setState({ isModalOpen: false });
+  userLogin = response.profileObj.imageUrl;
+  this.setState({ userLogin: true })
    }
+
   logout() {
     this.setState({ isModalOpen: true });
     userLogin = "Not logged in";
     this.setState({userLogin: false})
   }
+
   closeModal() {
    this.setState({ isModalOpen: false })
   }
+
   render() {
     const { choice } = this.state;
     return (
@@ -171,6 +176,7 @@ class UserForm extends React.Component {
                 <option>Sushi</option>
                 <option>Salad</option>
               </select>
+              <button>Submit</button>
               </form>
               </div>
             <main class="mdl-layout__content">

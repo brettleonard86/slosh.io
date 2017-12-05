@@ -20,6 +20,10 @@ const buttonStyle = {
   marginTop: "50px"
 }
 let userLogin ='' ;
+let wine1 = '';
+let wine2 = '';
+let wine3 = '';
+
 const logoutStyle = {
   width: "50px",
 }
@@ -61,7 +65,11 @@ class UserForm extends React.Component {
       // userEmail: ""
       isModalOpen: true,
       userLogin: false,
-      showLogout: false
+      showLogout: false,
+      showResult: false,
+      wine1: "",
+      wine2: "",
+      wine3: ""
     };
   }
 
@@ -82,13 +90,16 @@ class UserForm extends React.Component {
    //}
 
    API.getFood(this.state)
-   .then(function (response) {
+   .then( (response) => {
      console.log("API getFood", response.data);
+     this.setState({wine1: response.data[0].wines[0].name});
+     this.setState({wine2: response.data[0].wines[1].name});
+     this.setState({wine3: response.data[0].wines[2].name});
+     this.setState({showResult: true})
    })
    .catch(function (error) {
      console.log("getFood error", error);
    });
-
  }
 
   openModal() {
@@ -180,7 +191,7 @@ class UserForm extends React.Component {
                 <option>Burgers</option>
                 <option>BBQ</option>
                 <option>Ribs</option>
-                <option >Vegetables</option>
+                <option>Vegetables</option>
                 <option>Pizza</option>
                 <option>Chili</option>
                 <option>Fries</option>
@@ -191,7 +202,9 @@ class UserForm extends React.Component {
               </form>
               </div>
             <main class="mdl-layout__content">
-              <div class="page-content"></div>
+              <div class="page-content">
+                <p>{this.state.wine1}</p>
+              </div>
             </main>
             <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
           <GoogleLogin

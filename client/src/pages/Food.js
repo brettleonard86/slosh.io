@@ -20,7 +20,9 @@ const buttonStyle = {
   marginTop: "50px"
 }
 let userLogin ='' ;
-
+const logoutStyle = {
+  width: "50px",
+}
 const instructionsStyle = {
   textAlign: "center",
   fontSize: "2em",
@@ -58,7 +60,8 @@ class UserForm extends React.Component {
       // userName: "",
       // userEmail: ""
       isModalOpen: true,
-      userLogin: false
+      userLogin: false,
+      showLogout: false
     };
   }
 
@@ -115,22 +118,15 @@ class UserForm extends React.Component {
    this.setState({ isModalOpen: false })
   }
 
+  showLogout = () => {
+    this.setState({showLogout: !this.state.showLogout})
+  }
+
   render() {
     const { choice } = this.state;
     return (
       <div>
         <div>
-        <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
-          <GoogleLogin
-            clientId="1063825968337-jlrfit23tiqrc36i9rkkbhmgstbdrslm.apps.googleusercontent.com"
-            onSuccess={this.responseGoogle.bind(this)}
-            onFailure={() => console.log(this, arguments)}
-            width={220}
-            height={30}
-            longtitle={true}
-            isSignedIn
-            />
-          </Modal>
           <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
             <header style={headerColor} class="mdl-layout__header">
               <div class="mdl-layout__header-row">
@@ -138,11 +134,17 @@ class UserForm extends React.Component {
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
                   <div>
                     <div style={loggedStyle}>
-                      <img style={imageStyle} src={userLogin}/>
+                      <img style={imageStyle} src={userLogin} onClick={this.showLogout}/>
                     </div>
                   </div>
-                  <GoogleLogout onLogoutSuccess={this.logout.bind(this)}>
-                    </GoogleLogout>
+                  {this.state.showLogout === true ? 
+                    <GoogleLogout 
+                      buttonText={"Logout"} 
+                      onLogoutSuccess={this.logout.bind(this)}
+                      >
+                    </GoogleLogout> :
+                    null
+                  }
                   <div class="mdl-textfield__expandable-holder">
                   </div>
                 </div>
@@ -177,6 +179,17 @@ class UserForm extends React.Component {
             <main class="mdl-layout__content">
               <div class="page-content"></div>
             </main>
+            <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
+          <GoogleLogin
+            clientId="1063825968337-jlrfit23tiqrc36i9rkkbhmgstbdrslm.apps.googleusercontent.com"
+            onSuccess={this.responseGoogle.bind(this)}
+            onFailure={() => console.log(this, arguments)}
+            width={220}
+            height={30}
+            longtitle={true}
+            isSignedIn
+            />
+          </Modal>
           </div>
         </div>
       </div>

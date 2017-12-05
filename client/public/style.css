@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'apercuMono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('apercuMono'), local('apercuMono'),
+       url('client/public/fonts/apercu-mono-bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'apercuRegular';
+  font-style: normal;
+  font-weight: 400;
+  src: local('apercuRegular'), local('apercuRegular'),
+       url('client/public/fonts/apercu-regular.woff') format('woff');
+}
+
+body {
+  font-family: 'apercuRegular';
+}

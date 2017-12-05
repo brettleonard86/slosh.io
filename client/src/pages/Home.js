@@ -169,7 +169,9 @@ logout() {
   closeModal() {
    this.setState({ isModalOpen: false })
   }
-
+  showLogout = () => {
+    this.setState({showLogout: !this.state.showLogout})
+  }
   render() {
     const { choice } = this.state;
     return (
@@ -184,15 +186,17 @@ logout() {
                             mdl-textfield--floating-label mdl-textfield--align-right">
                             <div>
                               <div style={loggedStyle}>
-                                <img style={imageStyle} src={userLogin}/>
+                                <img style={imageStyle} src={userLogin} onClick={this.showLogout}/>
                               </div>
                             </div>
-                            <GoogleLogout
+                            {this.state.showLogout === true ? 
+                            <GoogleLogout 
+                              buttonText={"Logout"} 
                               onLogoutSuccess={this.logout.bind(this)}
-                              width={220}
-                              height={30}
-                            >
-                            </GoogleLogout>
+                              >
+                            </GoogleLogout> :
+                              null
+                            }
                   <div className="mdl-textfield__expandable-holder">
 
                   </div>

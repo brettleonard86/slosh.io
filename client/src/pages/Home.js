@@ -7,9 +7,33 @@ import API from "../utils/API";
 import ReactFontFace from 'react-font-face';
 import Radium, { Style } from 'radium';
 import './index.css';
-import wine1src from './winePictures/2009MartianGrenache.jpg';
-import wine2src from './winePictures/2008ChateauBeausejourBordeauxSuperior.jpg';
-import wine3src from './winePictures/2005LiberaliaCuatroCrianza.jpg';
+import MartianGrenache from './winePictures/2009MartianGrenache.jpg';
+import ChateauBeause from './winePictures/2008ChateauBeausejourBordeauxSuperior.jpg';
+import LiberaliaCuatro from './winePictures/2005LiberaliaCuatroCrianza.jpg';
+import ManifestoZinfandel from './winePictures/2009ManifestoZinfandel.jpg';
+import IndependentProducers from './winePictures/2010IndependentProducersMerlot.png';
+import QuintayPinot from './winePictures/2009Quintay"Q"PinotNoir.jpg';
+import LosClop from './winePictures/2010LosClopSurMalbec.jpg';
+import CasadelaCruz from './winePictures/2007CasadelaCruzPinotNoir.jpg';
+import BoscoDei from "./winePictures/BoscodeiCirmioliMontepulcianod'Abruzzo.jpg";
+import LoveLife from "./winePictures/LoveThisLifeWhite.jpg";
+import Vinum from "./winePictures/2011VinumChenin.jpg";
+import HouseRed from "./winePictures/2010HouseWineHouseRed.jpg";
+import BaosQuintas from "./winePictures/2010BAosQuintas.jpg";
+import MRLT from "./winePictures/MRLT.jpg";
+import LesHauts from "./winePictures/LesHautsDeLegarde.jpg";
+import SouthHill from "./winePictures/SouthHill.jpg";
+import TrieBaumer from "./winePictures/TrieBaumer.png";
+import LongueDog from "./winePictures/LongueDog.jpg";
+import ZullLust from "./winePictures/ZullLust.jpg";
+import Goddess from "./winePictures/GoddessSweet.jpg";
+import Ercavio from "./winePictures/ercavioblanco.jpg";
+import Casas from "./winePictures/Casas.jpg";
+import Akoya from "./winePictures/AkoyaChardonnay.jpg";
+import Score from "./winePictures/2011ScoreRedBlendClose.jpg";
+import Alcala from "./winePictures/Alcala.jpg";
+import Nugan from "./winePictures/Nugan.jpg";
+import Rambutan from "./winePictures/Rambutan.jpg";
 <Style rules = {{
   body: {
     fontFamily: 'apercuMono'
@@ -127,13 +151,262 @@ class UserForm extends React.Component {
      console.log("API getFood", response.data);
      this.setState({wine1: response.data[0].wines[0].name});
      this.setState({wine1Description: response.data[0].wines[0].longDescription})
-     this.setState({wine1Image:  wine1src})
+     switch (this.state.wine1) {
+      case "2009 Martian Grenache":
+        this.setState({wine1Image: MartianGrenache});
+        break;
+      case "2008 Chateau Beausejour Bordeaux Superior":
+        this.setState({wine1Image: ChateauBeause});
+        break;
+      case "2009 Manifesto Zinfandel":
+        this.setState({wine1Image: ManifestoZinfandel});
+        break;
+      case "2005 Liberalia Cuatro Crianza ":
+        this.setState({wine1Image: LiberaliaCuatro});
+        break;
+      case "2010 Independent Producers Merlot":
+        this.setState({wine1Image: IndependentProducers});
+        break;
+      case '2009 Quintay \"Q\" Pinot Noir':
+        this.setState({wine1Image: QuintayPinot});
+        break;
+      case '2010 Los Clop Sur Malbec ':
+        this.setState({wine1Image: LosClop});
+        break;
+      case '2007 Casa de la Cruz Pinot Noir':
+        this.setState({wine1Image: CasadelaCruz});
+        break;
+      case "Bosco dei Cirmioli Montepulciano d'Abruzzo":
+        this.setState({wine1Image: BoscoDei});
+        break;
+      case "2009 Love This Life White":
+        this.setState({wine1Image: LoveLife});
+        break;
+      case "2011 Vinum Chenin Blanc-Viognier":
+        this.setState({wine1Image: Vinum});
+        break;
+      case "2010 House Wine House Red":
+        this.setState({wine1Image: HouseRed});
+        break;
+      case "2010 Baos Quintas 'Proeza' Dao":
+        this.setState({wine1Image: BaosQuintas});
+        break;
+      case "2010 MRLT":
+        this.setState({wine1Image: MRLT});
+        break;
+      case "2012 Les Hauts De Legarde":
+        this.setState({wine1Image: LesHauts});
+        break;
+      case "2008 South Hill Sauvignon Blanc":
+        this.setState({wine1Image: SouthHill});
+        break;
+      case "2011 Triebaumer Trie Red":
+        this.setState({wine1Image: TrieBaumer});
+        break;
+      case "2010 Longue Dog White":
+        this.setState({wine1Image: LongueDog});
+        break;
+      case "2011 Zull Lust and Laune Blauer Portugieser":
+        this.setState({wine1Image: ZullLust});
+        break;
+      case "2012 Goddess Sweet White":
+        this.setState({wine1Image: Goddess});
+        break;
+      case "2012 Más Que Vinos Ercavio Blanco":
+        this.setState({wine1Image: Ercavio});
+        break;
+      case "Casas del Bosque Pinot Noir":
+        this.setState({wine1Image: Casas});
+        break;
+      case "2013 Akoya Chardonnay":
+        this.setState({wine1Image: Akoya});
+        break;
+      case "2011 Score Red Blend":
+        this.setState({wine1Image: Score});
+        break;
+      case "2013 Alcalá Monastrell":
+        this.setState({wine1Image: Alcala});
+        break;
+      case "2009 Nugan Vision Chardonnay":
+        this.setState({wine1Image: Nugan});
+        break;
+      case "2013 Rambutan Gewürztraminer":
+        this.setState({wine1Image: Rambutan});
+        break;
+     }
+     //this.setState({wine1Image:  wine1src})
      this.setState({wine2: response.data[0].wines[1].name});
      this.setState({wine2Description: response.data[0].wines[1].longDescription})
-     this.setState({wine2Image:  wine2src})
+     switch (this.state.wine2) {
+      case "2009 Martian Grenache":
+        this.setState({wine2Image: MartianGrenache});
+        break;
+      case "2008 Chateau Beausejour Bordeaux Superior":
+        this.setState({wine2Image: ChateauBeause});
+        break;
+      case "2009 Manifesto Zinfandel":
+        this.setState({wine2Image: ManifestoZinfandel});
+        break;
+      case "2005 Liberalia Cuatro Crianza ":
+        this.setState({wine2Image: LiberaliaCuatro});
+        break;
+      case "2010 Independent Producers Merlot":
+        this.setState({wine2Image: IndependentProducers});
+        break;
+      case '2009 Quintay \"Q\" Pinot Noir':
+        this.setState({wine2Image: QuintayPinot});
+        break;
+      case '2010 Los Clop Sur Malbec ':
+        this.setState({wine2Image: LosClop});
+        break;
+      case '2007 Casa de la Cruz Pinot Noir':
+        this.setState({wine2Image: CasadelaCruz});
+        break;
+      case "Bosco dei Cirmioli Montepulciano d'Abruzzo":
+        this.setState({wine2Image: BoscoDei});
+        break;
+      case "2009 Love This Life White":
+        this.setState({wine2Image: LoveLife});
+        break;
+      case "2011 Vinum Chenin Blanc-Viognier":
+        this.setState({wine2Image: Vinum});
+        break;
+      case "2010 House Wine House Red":
+        this.setState({wine2Image: HouseRed});
+        break;
+      case "2010 Baos Quintas 'Proeza' Dao":
+        this.setState({wine2Image: BaosQuintas});
+        break;
+      case "2010 MRLT":
+        this.setState({wine2Image: MRLT});
+        break;
+      case "2012 Les Hauts De Legarde":
+        this.setState({wine2Image: LesHauts});
+        break;
+      case "2008 South Hill Sauvignon Blanc":
+        this.setState({wine2Image: SouthHill});
+        break;
+      case "2011 Triebaumer Trie Red":
+        this.setState({wine2Image: TrieBaumer});
+        break;
+      case "2010 Longue Dog White":
+        this.setState({wine2Image: LongueDog});
+        break;
+      case "2011 Zull Lust and Laune Blauer Portugieser":
+        this.setState({wine2Image: ZullLust});
+        break;
+      case "2012 Goddess Sweet White":
+        this.setState({wine2Image: Goddess});
+        break;
+      case "2012 Más Que Vinos Ercavio Blanco":
+        this.setState({wine2Image: Ercavio});
+        break;
+      case "Casas del Bosque Pinot Noir":
+        this.setState({wine2Image: Casas});
+        break;
+      case "2013 Akoya Chardonnay":
+        this.setState({wine2Image: Akoya});
+        break;
+      case "2011 Score Red Blend":
+        this.setState({wine2Image: Score});
+        break;
+      case "2013 Alcalá Monastrell":
+        this.setState({wine2Image: Alcala});
+        break;
+      case "2009 Nugan Vision Chardonnay":
+        this.setState({wine2Image: Nugan});
+        break;
+      case "2013 Rambutan Gewürztraminer":
+        this.setState({wine2Image: Rambutan});
+        break;
+     }
+     //this.setState({wine2Image:  wine2src})
      this.setState({wine3: response.data[0].wines[2].name});
      this.setState({wine3Description: response.data[0].wines[2].longDescription})
-     this.setState({wine3Image:  wine3src})
+     switch (this.state.wine3) {
+      case "2009 Martian Grenache":
+        this.setState({wine3Image: MartianGrenache});
+        break;
+      case "2008 Chateau Beausejour Bordeaux Superior":
+        this.setState({wine3Image: ChateauBeause});
+        break;
+      case "2009 Manifesto Zinfandel":
+        this.setState({wine3Image: ManifestoZinfandel});
+        break;
+      case "2005 Liberalia Cuatro Crianza ":
+        this.setState({wine3Image: LiberaliaCuatro});
+        break;
+      case "2010 Independent Producers Merlot":
+        this.setState({wine3Image: IndependentProducers});
+        break;
+      case '2009 Quintay \"Q\" Pinot Noir':
+        this.setState({wine3Image: QuintayPinot});
+        break;
+      case '2010 Los Clop Sur Malbec ':
+        this.setState({wine3Image: LosClop});
+        break;
+      case '2007 Casa de la Cruz Pinot Noir':
+        this.setState({wine3Image: CasadelaCruz});
+        break;
+      case "Bosco dei Cirmioli Montepulciano d'Abruzzo":
+        this.setState({wine3Image: BoscoDei});
+        break;
+      case "2009 Love This Life White":
+        this.setState({wine3Image: LoveLife});
+        break;
+      case "2011 Vinum Chenin Blanc-Viognier":
+        this.setState({wine3Image: Vinum});
+        break;
+      case "2010 House Wine House Red":
+        this.setState({wine3Image: HouseRed});
+        break;
+      case "2010 Baos Quintas 'Proeza' Dao":
+        this.setState({wine3Image: BaosQuintas});
+        break;
+      case "2010 MRLT":
+        this.setState({wine3Image: MRLT});
+        break;
+      case "2012 Les Hauts De Legarde":
+        this.setState({wine3Image: LesHauts});
+        break;
+      case "2008 South Hill Sauvignon Blanc":
+        this.setState({wine3Image: SouthHill});
+        break;
+      case "2011 Triebaumer Trie Red":
+        this.setState({wine3Image: TrieBaumer});
+        break;
+      case "2010 Longue Dog White":
+        this.setState({wine3Image: LongueDog});
+        break;
+      case "2011 Zull Lust and Laune Blauer Portugieser":
+        this.setState({wine3Image: ZullLust});
+        break;
+      case "2012 Goddess Sweet White":
+        this.setState({wine3Image: Goddess});
+        break;
+      case "2012 Más Que Vinos Ercavio Blanco":
+        this.setState({wine3Image: Ercavio});
+        break;
+      case "Casas del Bosque Pinot Noir":
+        this.setState({wine3Image: Casas});
+        break;
+      case "2013 Akoya Chardonnay":
+        this.setState({wine3Image: Akoya});
+        break;
+      case "2011 Score Red Blend":
+        this.setState({wine3Image: Score});
+        break;
+      case "2013 Alcalá Monastrell":
+        this.setState({wine3Image: Alcala});
+        break;
+      case "2009 Nugan Vision Chardonnay":
+        this.setState({wine3Image: Nugan});
+        break;
+      case "2013 Rambutan Gewürztraminer":
+        this.setState({wine3Image: Rambutan});
+        break;
+     }
+     //this.setState({wine3Image:  wine3src})
      this.setState({showResult: true})
    })
    .catch(function (error) {

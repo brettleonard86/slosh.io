@@ -18,7 +18,7 @@ import ChateauBeause from './winePictures/2008ChateauBeausejourBordeauxSuperior.
 import LiberaliaCuatro from './winePictures/2005LiberaliaCuatroCrianza.jpg';
 import ManifestoZinfandel from './winePictures/2009ManifestoZinfandel.jpg';
 import IndependentProducers from './winePictures/2010IndependentProducersMerlot.png';
-import QuintayPinot from './winePictures/2009Quintay"Q"PinotNoir.jpg';
+import QuintayPinot from './winePictures/2009QuintayPinotNoir.jpg';
 import LosClop from './winePictures/2010LosClopSurMalbec.jpg';
 import CasadelaCruz from './winePictures/2007CasadelaCruzPinotNoir.jpg';
 import BoscoDei from "./winePictures/BoscodeiCirmioliMontepulcianod'Abruzzo.jpg";

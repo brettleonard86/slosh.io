@@ -68,7 +68,7 @@ class UserForm extends React.Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    console.log("submit choice", this.state)
+    console.log("submit choice line 71", this.state)
     //console.log(getFood({choice}))
     const { choice } = this.state;
     //if({ choice } === API.getFood({choice})){
@@ -76,23 +76,15 @@ class UserForm extends React.Component {
 
    //}
 
-   API.getFood()
+   API.getFood(this.state)
    .then(function (response) {
-     console.log("API getFood", response);
+     console.log("API getFood", response.data);
    })
    .catch(function (error) {
      console.log("getFood error", error);
    });
 
  }
-
-/*
-  foodResult(response) {
-    if(onSubmit.choice === API.getWineList.name){
-    response.getWineList.wines[0];
-   }
-   console.log(response)
-  }*/
 
   openModal() {
     this.setState({ isModalOpen: true })
@@ -115,8 +107,8 @@ class UserForm extends React.Component {
         console.log("createUser", error);
       });
 
-    console.log({accessToken: id_token});
-    console.log(response);
+    //console.log({accessToken: id_token});
+    //console.log(response);
     console.log("The user's name is " + userName);
     console.log("The user email is " + userEmail);
     this.setState({ isModalOpen: false });
@@ -184,8 +176,8 @@ class UserForm extends React.Component {
             <form style={formStyle} onSubmit={this.onSubmit}>
               <select name="choice" className="form-control" id="sel1" onChange={this.onChange}>
                 <option>Stew</option>
-                <option value="Pasta Red Sauce">Pasta (Red Sauce)</option>
-                <option value="Pasta Cream Sauce">Pasta (White Sauce)</option>
+                <option>Pasta (Red Sauce)</option>
+                <option>Pasta (White Sauce)</option>
                 <option>Cured Meats</option>
                 <option>Poultry</option>
                 <option>Pork</option>
@@ -195,9 +187,9 @@ class UserForm extends React.Component {
                 <option>Burgers</option>
                 <option>BBQ</option>
                 <option>Ribs</option>
-                <option value="Veggies">Vegetables</option>
+                <option >Vegetables</option>
                 <option>Pizza</option>
-                <option value="Chilli">Chili</option>
+                <option>Chili</option>
                 <option>Fries</option>
                 <option>Sushi</option>
                 <option>Salad</option>

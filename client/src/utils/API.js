@@ -6,10 +6,10 @@ export default {
   getWineList: function() {
       return axios.get("/api/alcohol");
     },
-    getFood: function(wine) {
-      return axios.get("/api/alcohol/", wine);
+  getFood: function(food) {
+      return axios.get("/api/alcohol?food=" + food.choice);
     },
-    createUser: function(user) {
+  createUser: function(user) {
       return axios.post("/api/user", user);
     }
     };

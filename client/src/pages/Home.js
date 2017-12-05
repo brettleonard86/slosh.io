@@ -7,8 +7,9 @@ import API from "../utils/API";
 import ReactFontFace from 'react-font-face';
 import Radium, { Style } from 'radium';
 import './index.css';
-
-
+import wine1src from './winePictures/2009MartianGrenache.jpg';
+import wine2src from './winePictures/2008ChateauBeausejourBordeauxSuperior.jpg';
+import wine3src from './winePictures/2005LiberaliaCuatroCrianza.jpg';
 <Style rules = {{
   body: {
     fontFamily: 'apercuMono'
@@ -42,6 +43,9 @@ let wine3 = '';
 let wine1Description = '';
 let wine2Description = '';
 let wine3Description = '';
+let wine1Image = null;
+let wine2Image = null;
+let wine3Image = null;
 const instructionsStyle = {
   textAlign: "center",
   fontSize: "2em",
@@ -100,7 +104,10 @@ class UserForm extends React.Component {
       wine3: "",
       wine1Description: "",
       wine2Description: "",
-      wine3Description: ""
+      wine3Description: "",
+      wine1Image: "",
+      wine2Image: "",
+      wine3Image: ""
     };
   }
 
@@ -120,10 +127,13 @@ class UserForm extends React.Component {
      console.log("API getFood", response.data);
      this.setState({wine1: response.data[0].wines[0].name});
      this.setState({wine1Description: response.data[0].wines[0].longDescription})
+     this.setState({wine1Image:  wine1src})
      this.setState({wine2: response.data[0].wines[1].name});
      this.setState({wine2Description: response.data[0].wines[1].longDescription})
+     this.setState({wine2Image:  wine2src})
      this.setState({wine3: response.data[0].wines[2].name});
      this.setState({wine3Description: response.data[0].wines[2].longDescription})
+     this.setState({wine3Image:  wine3src})
      this.setState({showResult: true})
    })
    .catch(function (error) {
@@ -262,10 +272,13 @@ logout() {
             <main className="mdl-layout__content">
               <div className="page-content">
                 <p>{this.state.wine1}</p>
+                <img src={this.state.wine1Image}/>
                 <p>{this.state.wine1Description}</p>
                 <p>{this.state.wine2}</p>
+                <img src={this.state.wine2Image}/>
                 <p>{this.state.wine2Description}</p>
                 <p>{this.state.wine3}</p>
+                <img src={this.state.wine3Image}/>
                 <p>{this.state.wine3Description}</p>
               </div>
             </main>

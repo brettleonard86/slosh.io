@@ -560,7 +560,7 @@ logout() {
               	</li>
 
               	<li>
-              		<div id="listHead" class="collapsible-header"><i class="material-icons">whatshot&nbsp;</i>Entre</div>
+              		<div id="listHead" class="collapsible-header"><i class="material-icons">whatshot&nbsp;</i>Entrée</div>
                   <div class="collapsible-body">
                   <div class="collapsible popout" data-collapsible="accordion">
                   <li>

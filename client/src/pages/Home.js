@@ -7,15 +7,12 @@ import API from "../utils/API";
 import ReactFontFace from 'react-font-face';
 import Radium, { Style } from 'radium';
 import './index.css';
-<<<<<<< HEAD
 import wine1src from './winePictures/2009MartianGrenache.jpg';
 import wine2src from './winePictures/2008ChateauBeausejourBordeauxSuperior.jpg';
 import wine3src from './winePictures/2005LiberaliaCuatroCrianza.jpg';
 import 'material-design-lite/material';
 import 'mdl-ext';
 import eqjs from 'eq.js';
-window.eqjs = eqjs; // Put in global scope - for use with script in page
-=======
 import MartianGrenache from './winePictures/2009MartianGrenache.jpg';
 import ChateauBeause from './winePictures/2008ChateauBeausejourBordeauxSuperior.jpg';
 import LiberaliaCuatro from './winePictures/2005LiberaliaCuatroCrianza.jpg';
@@ -43,6 +40,8 @@ import Score from "./winePictures/2011ScoreRedBlendClose.jpg";
 import Alcala from "./winePictures/Alcala.jpg";
 import Nugan from "./winePictures/Nugan.jpg";
 import Rambutan from "./winePictures/Rambutan.jpg";
+window.eqjs = eqjs; // Put in global scope - for use with script in page
+
 <Style rules = {{
   body: {
     fontFamily: 'apercuMono'
@@ -54,7 +53,6 @@ import Rambutan from "./winePictures/Rambutan.jpg";
     fontWeight: 'bold'
   }
 }} />
->>>>>>> b79269c4f94097aaa9b307c815aeac006bfa1aa6
 
 
 let userLogin ='' ;

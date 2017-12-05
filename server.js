@@ -22,7 +22,7 @@ mongoose.Promise = Promise;
 
 // Connect to the Mongo DB
 mongoose.connect(
-	process.env.MONGODB_URI || "mongodb://localhost/sloshio", 
+	process.env.MONGODB_URI || "mongodb://localhost/sloshio",
 	{
   	  useMongoClient: true
 	}
@@ -32,7 +32,7 @@ mongoose.connection.on("connected", function(){
 	console.log("mongo is connected");
 })
 
-//alcohol.seedData();
+alcohol.seedData();
 
 // Listen on the port
 app.listen(PORT, function() {

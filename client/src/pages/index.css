@@ -1,0 +1,94 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root,
+div[data-reactroot] {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: 'apercuMono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('apercuMono'), local('apercuMono'),
+       url('./fonts/apercu-mono-bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'apercuRegular';
+  font-style: normal;
+  font-weight: 400;
+  src: local('apercuRegular'), local('apercuRegular'),
+       url('./fonts/apercu-regular.woff') format('woff');
+}
+
+body {
+  font-family: 'apercuMono';
+  background-color: cornsilk;
+}
+
+#drawer {
+  background-color: cornsilk;
+}
+
+header {
+  color: cornsilk;
+}
+
+#appName {
+  font-family: 'apercuMono';
+  color: 'firebrick';
+}
+
+/*Vertical Tabs*/
+.vertical-mdl-tabs {
+    margin-top: 30px;
+}
+.vertical-mdl-tabs .mdl-tabs__tab-bar {
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-bottom: 35px;
+    height: inherit;
+    border-bottom: none;
+    border-right: 1px solid;
+    border-color: 'firebrick';
+}
+
+.vertical-mdl-tabs .mdl-tabs__tab {
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    box-sizing: border-box;
+    letter-spacing: 2px;
+}
+
+.vertical-mdl-tabs .mdl-tabs__tab:hover {
+  background: rgba(158, 158, 158, 0.34);
+  color: black;
+}
+
+.vertical-mdl-tabs.mdl-tabs.is-upgraded a.mdl-tabs__tab.is-active {
+    border-right: 3px solid #ED462F;
+}
+.vertical-mdl-tabs.mdl-tabs.is-upgraded .mdl-tabs__tab.is-active:after {
+    content: inherit;
+    height: 0;
+}
+
+.vertical-mdl-tabs.mdl-tabs.is-upgraded .mdl-tabs__panel.is-active, .mdl-tabs__panel {
+    padding: 0 30px;
+}
+
+.vertical-mdl-tabs.mdl-tabs .mdl-tabs__tab {
+    text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}

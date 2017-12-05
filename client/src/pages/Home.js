@@ -570,32 +570,32 @@ logout() {
                   </div>
                     <div class="collapsible-body">
                       <br />
-                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
-                      <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" />
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-6">
+                      <input type="checkbox" id="checkbox-6" class="mdl-checkbox__input" />
                       <span class="mdl-checkbox__label">
                       <p>Mexican</p>
                       </span>
                       </label>
-                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
-                      <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-7">
+                      <input type="checkbox" id="checkbox-7" class="mdl-checkbox__input" />
                       <span class="mdl-checkbox__label">
                       <p>Italian</p>
                       </span>
                       </label>
-                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
-                      <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-8">
+                      <input type="checkbox" id="checkbox-8" class="mdl-checkbox__input" />
                       <span class="mdl-checkbox__label">
                       <p>American</p>
                       </span>
                       </label>
-                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
-                      <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-9">
+                      <input type="checkbox" id="checkbox-9" class="mdl-checkbox__input" />
                       <span class="mdl-checkbox__label">
                       <p>Thai</p>
                       </span>
                       </label>
-                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
-                      <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-10">
+                      <input type="checkbox" id="checkbox-10" class="mdl-checkbox__input" />
                       <span class="mdl-checkbox__label">
                       <p>Chinese</p>
                       </span>
@@ -612,38 +612,38 @@ logout() {
                   </div>
                     <div class="collapsible-body">
                       <br />
-                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
-                      <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-11">
+                      <input type="checkbox" id="checkbox-11" class="mdl-checkbox__input" />
                       <span class="mdl-checkbox__label">
                       <p>Beef</p>
                       </span>
                       </label>
-                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
-                      <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-12">
+                      <input type="checkbox" id="checkbox-12" class="mdl-checkbox__input" />
                       <span class="mdl-checkbox__label">
                       <p>Chicken</p>
                       </span>
                       </label>
-                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
-                      <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-13">
+                      <input type="checkbox" id="checkbox-13" class="mdl-checkbox__input" />
                       <span class="mdl-checkbox__label">
                       <p>Seafood</p>
                       </span>
                       </label>
-                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
-                      <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-14">
+                      <input type="checkbox" id="checkbox-14" class="mdl-checkbox__input" />
                       <span class="mdl-checkbox__label">
                       <p>Poultry</p>
                       </span>
                       </label>
-                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
-                      <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-15">
+                      <input type="checkbox" id="checkbox-15" class="mdl-checkbox__input" />
                       <span class="mdl-checkbox__label">
                       <p>Pork</p>
                       </span>
                       </label>
-                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
-                      <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-16">
+                      <input type="checkbox" id="checkbox-16" class="mdl-checkbox__input" />
                       <span class="mdl-checkbox__label">
                       <p>Cured Meat</p>
                       </span>
@@ -660,38 +660,38 @@ logout() {
                   </div>
                     <div class="collapsible-body">
                       <br />
-                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
-                      <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-17">
+                      <input type="checkbox" id="checkbox-17" class="mdl-checkbox__input" />
                       <span class="mdl-checkbox__label">
                       <p>Pizza</p>
                       </span>
                       </label>
-                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
-                      <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-18">
+                      <input type="checkbox" id="checkbox-18" class="mdl-checkbox__input" />
                       <span class="mdl-checkbox__label">
                       <p>BBQ</p>
                       </span>
                       </label>
-                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
-                      <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-19">
+                      <input type="checkbox" id="checkbox-19" class="mdl-checkbox__input" />
                       <span class="mdl-checkbox__label">
                       <p>Burger</p>
                       </span>
                       </label>
-                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
-                      <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-20">
+                      <input type="checkbox" id="checkbox-20" class="mdl-checkbox__input" />
                       <span class="mdl-checkbox__label">
                       <p>Sushi</p>
                       </span>
                       </label>
-                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
-                      <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-21">
+                      <input type="checkbox" id="checkbox-21" class="mdl-checkbox__input" />
                       <span class="mdl-checkbox__label">
                       <p>Pasta Red Sauce</p>
                       </span>
                       </label>
-                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
-                      <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-22">
+                      <input type="checkbox" id="checkbox-22" class="mdl-checkbox__input" />
                       <span class="mdl-checkbox__label">
                       <p>Pasta White Sauce</p>
                       </span>
@@ -710,14 +710,14 @@ logout() {
                   <div class="collapsible-body">
                     <div class="collapsible-header">
                     <br />
-                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
-                    <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-23">
+                    <input type="checkbox" id="checkbox-23" class="mdl-checkbox__input" />
                     <span class="mdl-checkbox__label">
                     <p>Chocolate Cake</p>
                     </span>
                     </label>
-                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
-                    <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-24">
+                    <input type="checkbox" id="checkbox-24" class="mdl-checkbox__input" />
                     <span class="mdl-checkbox__label">
                     <p>Fruit</p>
                     </span>

@@ -10,6 +10,11 @@ import './index.css';
 import wine1src from './winePictures/2009MartianGrenache.jpg';
 import wine2src from './winePictures/2008ChateauBeausejourBordeauxSuperior.jpg';
 import wine3src from './winePictures/2005LiberaliaCuatroCrianza.jpg';
+import 'material-design-lite/material';
+import 'mdl-ext';
+import eqjs from 'eq.js';
+window.eqjs = eqjs; // Put in global scope - for use with script in page
+
 
 let userLogin ='' ;
 let wine1 = '';
@@ -35,6 +40,13 @@ const imageStyle = {
   borderRadius: "50%",
   marginRight: "15px",
   marginTop: "-3.5px"
+}
+
+const modalStyle = {
+  width: "26em",
+  height: "36em",
+  backgroundColor: "firebrick",
+  color: "white"
 }
 
 const headerColor = {
@@ -146,7 +158,7 @@ logout() {
         <div>
           <div className="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
                       mdl-layout--fixed-header">
-            <header style={headerColor} class="mdl-layout__header">
+            <header style={headerColor} className="mdl-layout__header">
               <div className="mdl-layout__header-row">
                 <div className="mdl-layout-spacer"></div>
                   <div className="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
@@ -173,20 +185,20 @@ logout() {
           <div id="drawer" className="mdl-layout__drawer">
           <span id="appName" className="mdl-layout-title">slosh.io</span>
 
-            <div class="mdl-tabs vertical-mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+            <div className="mdl-tabs vertical-mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
             <div className="mdl-grid mdl-grid--no-spacing">
             <div className="mdl-cell mdl-cell--2-col">
             <div className="mdl-tabs__tab-bar">
 
-              <a href="#tab1-panel" class="mdl-tabs__tab is-active">
+              <a href="#tab1-panel" className="mdl-tabs__tab is-active">
               Pairings
               </a>
 
-            	<a href="#tab2-panel" class="mdl-tabs__tab">
+            	<a href="#tab2-panel" className="mdl-tabs__tab">
             	About
             	</a>
 
-              <a href="#tab3-panel" class="mdl-tabs__tab">
+              <a href="#tab3-panel" className="mdl-tabs__tab">
             	Favorite
             	</a>
 
@@ -219,10 +231,225 @@ logout() {
 
                 <button>Submit</button>
               </form>
+
+              <ul class="collapsible" data-collapsible="accordion">
+              <hr class="list" />
+                <li>
+                  <div id="listHead" class="collapsible-header"><p class="material-icons">flare&nbsp;</p>Side</div>
+                  <div class="collapsible-body">
+                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
+                    <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" />
+                    <span class="mdl-checkbox__label">
+                      <p>Cheese</p>
+                    </span>
+                    </label>
+                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-2">
+                    <input type="checkbox" id="checkbox-2" class="mdl-checkbox__input" />
+                    <span class="mdl-checkbox__label">
+                      <p>Fruit</p>
+                    </span>
+                    </label>
+                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-3">
+                    <input type="checkbox" id="checkbox-3" class="mdl-checkbox__input" />
+                    <span class="mdl-checkbox__label">
+                      <p>Soup</p>
+                    </span>
+                    </label>
+                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
+                    <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                    <span class="mdl-checkbox__label">
+                      <p>Vegetables</p>
+                    </span>
+                    </label>
+                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-5">
+                    <input type="checkbox" id="checkbox-5" class="mdl-checkbox__input" />
+                    <span class="mdl-checkbox__label">
+                      <p>Fries</p>
+                    </span>
+                    </label>
+                    </div>
+                <hr class="list"/>
+              	</li>
+
+              	<li>
+              		<div id="listHead" class="collapsible-header"><i class="material-icons">whatshot&nbsp;</i>Entre</div>
+                  <div class="collapsible-body">
+                  <div class="collapsible popout" data-collapsible="accordion">
+                  <li>
+                  <div class="collapsible-header">
+                  <br />
+                  Type
+                  </div>
+                    <div class="collapsible-body">
+                      <br />
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
+                      <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" />
+                      <span class="mdl-checkbox__label">
+                      <p>Mexican</p>
+                      </span>
+                      </label>
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
+                      <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                      <span class="mdl-checkbox__label">
+                      <p>Italian</p>
+                      </span>
+                      </label>
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
+                      <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                      <span class="mdl-checkbox__label">
+                      <p>American</p>
+                      </span>
+                      </label>
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
+                      <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                      <span class="mdl-checkbox__label">
+                      <p>Thai</p>
+                      </span>
+                      </label>
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
+                      <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                      <span class="mdl-checkbox__label">
+                      <p>Chinese</p>
+                      </span>
+                      </label>
+                    </div>
+                  </li>
+                  </div>
+                  <hr class="list"/>
+
+                  <div class="collapsible popout" data-collapsible="accordion">
+                  <li>
+                  <div class="collapsible-header">
+                  Meat
+                  </div>
+                    <div class="collapsible-body">
+                      <br />
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
+                      <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                      <span class="mdl-checkbox__label">
+                      <p>Beef</p>
+                      </span>
+                      </label>
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
+                      <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                      <span class="mdl-checkbox__label">
+                      <p>Chicken</p>
+                      </span>
+                      </label>
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
+                      <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                      <span class="mdl-checkbox__label">
+                      <p>Seafood</p>
+                      </span>
+                      </label>
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
+                      <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                      <span class="mdl-checkbox__label">
+                      <p>Poultry</p>
+                      </span>
+                      </label>
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
+                      <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                      <span class="mdl-checkbox__label">
+                      <p>Pork</p>
+                      </span>
+                      </label>
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
+                      <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                      <span class="mdl-checkbox__label">
+                      <p>Cured Meat</p>
+                      </span>
+                      </label>
+                    </div>
+                  </li>
+                  </div>
+                  <hr class="list"/>
+
+                  <div class="collapsible popout" data-collapsible="accordion">
+                  <li>
+                  <div class="collapsible-header">
+                  Dish
+                  </div>
+                    <div class="collapsible-body">
+                      <br />
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
+                      <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                      <span class="mdl-checkbox__label">
+                      <p>Pizza</p>
+                      </span>
+                      </label>
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
+                      <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                      <span class="mdl-checkbox__label">
+                      <p>BBQ</p>
+                      </span>
+                      </label>
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
+                      <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                      <span class="mdl-checkbox__label">
+                      <p>Burger</p>
+                      </span>
+                      </label>
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
+                      <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                      <span class="mdl-checkbox__label">
+                      <p>Sushi</p>
+                      </span>
+                      </label>
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
+                      <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                      <span class="mdl-checkbox__label">
+                      <p>Pasta Red Sauce</p>
+                      </span>
+                      </label>
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
+                      <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                      <span class="mdl-checkbox__label">
+                      <p>Pasta White Sauce</p>
+                      </span>
+                      </label>
+                    </div>
+                  </li>
+                  </div>
+
+                </div>
+                <hr class="list"/>
+                </li>
+
+
+                <li>
+                  <div id="listHead" class="collapsible-header"><i class="material-icons">filter_drama&nbsp;</i>Dessert</div>
+                  <div class="collapsible-body">
+                    <div class="collapsible-header">
+                    <br />
+                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
+                    <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                    <span class="mdl-checkbox__label">
+                    <p>Chocolate Cake</p>
+                    </span>
+                    </label>
+                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
+                    <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" />
+                    <span class="mdl-checkbox__label">
+                    <p>Fruit</p>
+                    </span>
+                    </label>
+                  </div>
+                <hr class="list"/>
+                </div>
+                </li>
+                </ul>
+
+
+
+
+
+
+            </div>
             </div>
 
             <div className="mdl-tabs__panel" id="tab2-panel">
-            <div class="image"></div>​
+            <div className="image"></div>​
               <p id="aboutUs">
                 The only application that respects your food with proper alcohol.
                 Simply tell slosh what’s cooking, filter through your current drinking
@@ -247,6 +474,7 @@ logout() {
     <main className="mdl-layout__content">
     <div className="page-content">
 
+
     <p>{this.state.wine1}</p>
     <img src={this.state.wine1Image}/>
     <p>{this.state.wine1Description}</p>
@@ -256,22 +484,46 @@ logout() {
     <p>{this.state.wine3}</p>
     <img src={this.state.wine3Image}/>
     <p>{this.state.wine3Description}</p>
+
+
+    <div id="card" class="demo-card-square mdl-card mdl-shadow--2dp">
+      <div class="mdl-card__title mdl-card--expand">
+        <h2 class="mdl-card__title-text">2013 Akoya Chardonnay</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Aenan convallis.
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          check it out
+        </a>
+      </div>
+    </div>
+
+
+
     </div>
     </main>
 
+
     <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
-    <GoogleLogin
-    clientId="1063825968337-jlrfit23tiqrc36i9rkkbhmgstbdrslm.apps.googleusercontent.com"
-    onSuccess={this.responseGoogle.bind(this)}
-    onFailure={() => console.log(this, arguments)}
-    width={220}
-    height={30}
-    longtitle={true}
-    isSignedIn
-    />
+      <div style={modalStyle}>
+        <GoogleLogin
+        clientId="1063825968337-jlrfit23tiqrc36i9rkkbhmgstbdrslm.apps.googleusercontent.com"
+        onSuccess={this.responseGoogle.bind(this)}
+        onFailure={() => console.log(this, arguments)}
+        width={1000}
+        height={1000}
+        longtitle={true}
+        isSignedIn
+        />
+        <div>
+          slosh.io
+        </div>​
+      </div>
     </Modal>
 
-    </div>
   </div>
 </div>
     );

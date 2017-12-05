@@ -16,7 +16,7 @@
 
 body {
   font-family: 'apercuMono';
-  background-color: cornsilk;
+  background-color: #e2dcd9;
 }
 
 * {
@@ -31,7 +31,6 @@ div[data-reactroot] {
   padding: 0;
   margin: 0;
 }
-
 
 h1, h2, h3 {
   fontWeight: 'bold';
@@ -48,12 +47,7 @@ header {
 
 #appName {
   font-family: 'apercuMono';
-  color: 'firebrick';
-}
-
-#redLogo {
-  width: 20%;
-  height: 20%;
+  border-bottom: 1px solid #c4bcba;
 }
 
 #aboutUs {
@@ -65,7 +59,7 @@ header {
 }
 
 #nameDevice {
-  padding-top: 30px;
+  padding-top: 27px;
   font-family: 'apercuRegular';
   font-size: 38px;
   color: #c4bcba;
@@ -80,10 +74,18 @@ header {
   margin-left: 25px;
 }
 
+
 div.image {
    content:url(winePictures/redmark.png);
-   width: 98%;
-   height: 98%;
+   width: 220px;
+   height: auto;
+   padding-bottom: 5px;
+}​
+
+div.imageHome {
+   content:url(winePictures/blackmark.png);
+   width: 100px;
+   height: auto;
    padding-bottom: 5px;
 }​
 
@@ -137,6 +139,50 @@ a.mdl-tabs__tab {
     text-align: left;
 }
 
-.text-center {
-  text-align: center;
+#listHead {
+  font-size: 35px;
+  color: firebrick;
+  list-style-type: none cornsilk;
+  margin-left: -30px;
+}
+
+.collapsible-body {
+  font-family: 'apercuRegular';
+  font-size: 20px;
+}
+
+.collapsible-header {
+  font-size: 20px;
+  font-family: 'apercuRegular';
+}
+
+.mdl-checkbox .mdl-js-checkbox .mdl-js-ripple-effect {
+  background-color: firebrick;
+}
+
+ul {
+    list-style-type: none;
+
+}
+
+.material-icons {
+  margin-left: -10px;
+  padding-right: 10px;
+}
+
+hr .list {
+  border: 1px solid firebrick;
+}
+
+#card {
+  background-color: cornsilk;
+}
+.demo-card-square.mdl-card {
+  width: 320px;
+  height: 320px;
+}
+.demo-card-square > .mdl-card__title {
+  color: firebrick;
+  background:
+    url('winePictures/2010ChâteauBeauséjourPentimento.jpg') bottom right 15% no-repeat;
 }

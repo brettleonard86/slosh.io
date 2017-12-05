@@ -73,13 +73,8 @@ class UserForm extends React.Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    console.log("submit choice line 71", this.state)
-    //console.log(getFood({choice}))
+    console.log("submit choice line 71", this.state) 
     const { choice } = this.state;
-    //if({ choice } === API.getFood({choice})){
-    //console.log();
-
-   //}
 
    API.getFood(this.state)
    .then(function (response) {
@@ -169,8 +164,8 @@ class UserForm extends React.Component {
             <form style={formStyle} onSubmit={this.onSubmit}>
               <select name="choice" className="form-control" id="sel1" onChange={this.onChange}>
                 <option>Stew</option>
-                <option>Pasta (Red Sauce)</option>
-                <option>Pasta (White Sauce)</option>
+                <option value="Pasta Red Sauce">Pasta (Red Sauce)</option>
+                <option value="Pasta Cream Sauce">Pasta (White Sauce)</option>
                 <option>Cured Meats</option>
                 <option>Poultry</option>
                 <option>Pork</option>
@@ -180,9 +175,9 @@ class UserForm extends React.Component {
                 <option>Burgers</option>
                 <option>BBQ</option>
                 <option>Ribs</option>
-                <option >Vegetables</option>
+                <option value="Veggies">Vegetables</option>
                 <option>Pizza</option>
-                <option>Chili</option>
+                <option value="Chilli">Chili</option>
                 <option>Fries</option>
                 <option>Sushi</option>
                 <option>Salad</option>

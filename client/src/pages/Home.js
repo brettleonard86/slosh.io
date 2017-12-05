@@ -39,6 +39,9 @@ let userLogin ='' ;
 let wine1 = '';
 let wine2 = '';
 let wine3 = '';
+let wine1Description = '';
+let wine2Description = '';
+let wine3Description = '';
 const instructionsStyle = {
   textAlign: "center",
   fontSize: "2em",
@@ -94,7 +97,10 @@ class UserForm extends React.Component {
       showResult: false,
       wine1: "",
       wine2: "",
-      wine3: ""
+      wine3: "",
+      wine1Description: "",
+      wine2Description: "",
+      wine3Description: ""
     };
   }
 
@@ -113,8 +119,11 @@ class UserForm extends React.Component {
    .then( (response) => {
      console.log("API getFood", response.data);
      this.setState({wine1: response.data[0].wines[0].name});
+     this.setState({wine1Description: response.data[0].wines[0].longDescription})
      this.setState({wine2: response.data[0].wines[1].name});
+     this.setState({wine2Description: response.data[0].wines[1].longDescription})
      this.setState({wine3: response.data[0].wines[2].name});
+     this.setState({wine3Description: response.data[0].wines[2].longDescription})
      this.setState({showResult: true})
    })
    .catch(function (error) {
@@ -249,6 +258,11 @@ logout() {
             <main className="mdl-layout__content">
               <div className="page-content">
                 <p>{this.state.wine1}</p>
+                <p>{this.state.wine1Description}</p>
+                <p>{this.state.wine2}</p>
+                <p>{this.state.wine2Description}</p>
+                <p>{this.state.wine3}</p>
+                <p>{this.state.wine3Description}</p>
               </div>
             </main>
             <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>

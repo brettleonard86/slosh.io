@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const routes = require("./routes");
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 const alcohol = require("./scripts/alcohol");
 
 // Configure body parser for AJAX requests
@@ -25,7 +25,7 @@ mongoose.connect(
 	"mongodb://heroku_sh5bhx7j:hujullrihc2ta0pbnms79mqqse@ds131826.mlab.com:31826/heroku_sh5bhx7j",
 	//process.env.MONGODB_URI || "mongodb://localhost/sloshio",
 	{
-  	  useMongoClient: true
+		useMongoClient: true
 	}
 );
 

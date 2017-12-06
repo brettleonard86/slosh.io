@@ -24,20 +24,6 @@ function renderButton() {
   });
 }
 
-
-
-
-// componentDidMount: function() {
-//   gapi.signin2.render('g-signin2', {
-//     'scope': 'https://www.googleapis.com/auth/plus.login',
-//     'width': 240,
-//     'height': 50,
-//     'longtitle': true,
-//     'theme': 'dark',
-//     'onsuccess': this. onSignIn
-//   });  
-// }
-
 // Sign out code from Google.
 function signOut() {
   var auth2 = gapi.auth2.getAuthInstance();
@@ -45,3 +31,4 @@ function signOut() {
     console.log('User signed out.');
   });
 }
+

@@ -81,7 +81,9 @@ const imageStyle = {
   marginTop: "-3.5px"
 }
 
-
+const titleStyle = {
+  marginTop: "1.3em",
+}
 const headerColor = {
   backgroundColor: "firebrick"
 }
@@ -759,13 +761,13 @@ logout() {
     <div className="page-content">
 
 
-    <p>{this.state.wine1}</p>
+    <h2 style={titleStyle}>{this.state.wine1}</h2>
     <img src={this.state.wine1Image}/>
     <p>{this.state.wine1Description}</p>
-    <p>{this.state.wine2}</p>
+    <h2>{this.state.wine2}</h2>
     <img src={this.state.wine2Image}/>
     <p>{this.state.wine2Description}</p>
-    <p>{this.state.wine3}</p>
+    <h2>{this.state.wine3}</h2>
     <img src={this.state.wine3Image}/>
     <p>{this.state.wine3Description}</p>
 

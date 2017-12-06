@@ -81,12 +81,6 @@ const imageStyle = {
   marginTop: "-3.5px"
 }
 
-const modalStyle = {
-  width: "26em",
-  height: "36em",
-  backgroundColor: "firebrick",
-  color: "white"
-}
 
 const headerColor = {
   backgroundColor: "firebrick"
@@ -798,7 +792,6 @@ logout() {
 
 
     <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
-      <div style={modalStyle}>
         <GoogleLogin
         clientId="1063825968337-jlrfit23tiqrc36i9rkkbhmgstbdrslm.apps.googleusercontent.com"
         onSuccess={this.responseGoogle.bind(this)}
@@ -808,10 +801,6 @@ logout() {
         longtitle={true}
         isSignedIn
         />
-        <div>
-          slosh.io
-        </div>​
-      </div>
     </Modal>
 
   </div>

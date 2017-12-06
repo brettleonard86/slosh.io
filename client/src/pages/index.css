@@ -33,7 +33,7 @@ div[data-reactroot] {
 }
 
 h1, h2, h3 {
-  fontWeight: 'bold';
+  font-weight: 'bold';
 }
 
 
@@ -76,14 +76,14 @@ header {
 
 
 div.image {
-   content:url(winePictures/redmark.png);
+   content:url(./winePictures/redmark.png);
    width: 220px;
    height: auto;
    padding-bottom: 5px;
 }​
 
 div.imageHome {
-   content:url(winePictures/blackmark.png);
+   content:url(./winePictures/blackmark.png);
    width: 100px;
    height: auto;
    padding-bottom: 5px;
@@ -200,6 +200,5 @@ hr .list {
 }
 .demo-card-square > .mdl-card__title {
   color: firebrick;
-  background:
-    url('winePictures/casas.jpg') bottom right 15% no-repeat;
+  background: url('./winePictures/Casas.jpg') bottom right 15% no-repeat;
 }

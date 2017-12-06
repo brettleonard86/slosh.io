@@ -1,7 +1,7 @@
 /*import React from "react";
 import "./Header.css";
 
-<header style={headerColor} class="mdl-layout__header">
+<header style={headerColor} className="mdl-layout__header">
   <div className="mdl-layout__header-row">
     <div className="mdl-layout-spacer"></div>
       <div className="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">

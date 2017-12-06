@@ -42,7 +42,8 @@ const alcohol = [
             "how_to_serve": "[]",
             "sweetness": [],
             "tasting_note": [],
-            "winemaking": []
+            "winemaking": [],
+            "image": "blackmark.png"
         },
         {
             "@search.score": 1,
@@ -75,7 +76,8 @@ const alcohol = [
             "how_to_serve": "[]",
             "sweetness": [],
             "tasting_note": [],
-            "winemaking": []
+            "winemaking": [],
+            "image": "Alcala.jpg"
         },
         {
             "@search.score": 1,
@@ -119,7 +121,8 @@ const alcohol = [
             "how_to_serve": "[]",
             "sweetness": [],
             "tasting_note": [],
-            "winemaking": []
+            "winemaking": [],
+            "image": "GoddessSweet.jpg"
         },
         {
             "@search.score": 1,
@@ -152,7 +155,8 @@ const alcohol = [
             "how_to_serve": "[]",
             "sweetness": [],
             "tasting_note": [],
-            "winemaking": []
+            "winemaking": [],
+            "image": "MRLT.jpg"
         },
         {
             "@search.score": 1,
@@ -189,7 +193,8 @@ const alcohol = [
             "how_to_serve": "[]",
             "sweetness": [],
             "tasting_note": [],
-            "winemaking": []
+            "winemaking": [],
+            "image": "Alcala.jpg"
         },
         {
             "@search.score": 1,
@@ -227,7 +232,8 @@ const alcohol = [
             "how_to_serve": "[]",
             "sweetness": [],
             "tasting_note": [],
-            "winemaking": []
+            "winemaking": [],
+            "image": "Alcala.jpg"
         },
         {
             "@search.score": 1,
@@ -264,7 +270,8 @@ const alcohol = [
             "how_to_serve": "[]",
             "sweetness": [],
             "tasting_note": [],
-            "winemaking": []
+            "winemaking": [],
+            "image": "Alcala.jpg"
         },
         {
             "@search.score": 1,
@@ -297,7 +304,8 @@ const alcohol = [
             "how_to_serve": "[]",
             "sweetness": [],
             "tasting_note": [],
-            "winemaking": []
+            "winemaking": [],
+            "image": "Alcala.jpg"
         },
         {
             "@search.score": 1,
@@ -335,7 +343,8 @@ const alcohol = [
             "how_to_serve": "[]",
             "sweetness": [],
             "tasting_note": [],
-            "winemaking": []
+            "winemaking": [],
+            "image": "Alcala.jpg"
         },
         {
             "@search.score": 1,
@@ -376,7 +385,8 @@ const alcohol = [
             "how_to_serve": "[]",
             "sweetness": [],
             "tasting_note": [],
-            "winemaking": []
+            "winemaking": [],
+            "image": "Alcala.jpg"
         },
         {
             "@search.score": 1,
@@ -415,7 +425,8 @@ const alcohol = [
             "how_to_serve": "[]",
             "sweetness": [],
             "tasting_note": [],
-            "winemaking": []
+            "winemaking": [],
+            "image": "Alcala.jpg"
         },
         {
             "@search.score": 1,
@@ -456,7 +467,8 @@ const alcohol = [
             "how_to_serve": "[]",
             "sweetness": [],
             "tasting_note": [],
-            "winemaking": []
+            "winemaking": [],
+            "image": "Alcala.jpg"
         },
         {
             "@search.score": 1,
@@ -496,7 +508,8 @@ const alcohol = [
             "how_to_serve": "[]",
             "sweetness": [],
             "tasting_note": [],
-            "winemaking": []
+            "winemaking": [],
+            "image": "Alcala.jpg"
         },
         {
             "@search.score": 1,
@@ -537,7 +550,8 @@ const alcohol = [
             "how_to_serve": "[]",
             "sweetness": [],
             "tasting_note": [],
-            "winemaking": []
+            "winemaking": [],
+            "image": "Alcala.jpg"
         },
         {
             "@search.score": 1,
@@ -2059,6 +2073,7 @@ for (var i = 0; i < testData.length; i++) {
           how_to_serve: current.how_to_serve,
           sweetness: current.sweetness,
           tasting_note: current.tasting_note,
+          image: current.image
         }
     }
 //console.log(JSON.stringify(uniquePairings));

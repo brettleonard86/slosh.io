@@ -19,7 +19,8 @@ const pairingsSchema = new Schema({
     descriptor_structure: [{ type: String }],
     how_to_serve: [{ type: String }],
     sweetness: [{ type: String }],
-    tasting_note: [{ type: String }]
+    tasting_note: [{ type: String }],
+    image: String
   }]
 
 });

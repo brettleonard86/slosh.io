@@ -26,6 +26,8 @@ mongoose.connect(
 	//process.env.MONGODB_URI || "mongodb://localhost/sloshio",
 	{
 		useMongoClient: true
+	}
+);
 
 mongoose.connection.on("connected", function(){
 	console.log("mongo is connected");

@@ -113,7 +113,7 @@ div.imageHome {
 }
 
 a.mdl-tabs__tab {
-  padding-left: 50px;
+  padding-left: 120px;
 }
 
 .vertical-mdl-tabs .mdl-tabs__tab:hover {
@@ -139,6 +139,10 @@ a.mdl-tabs__tab {
     text-align: left;
 }
 
+.mdl-layout_header .mdl-layout_drawer-button {
+  color: cornsilk;
+}
+
 #listHead {
   font-size: 35px;
   color: firebrick;
@@ -156,13 +160,26 @@ a.mdl-tabs__tab {
   font-family: 'apercuRegular';
 }
 
-.mdl-checkbox .mdl-js-checkbox .mdl-js-ripple-effect {
+::selection {
   background-color: firebrick;
+  background: firebrick;
 }
 
 ul {
     list-style-type: none;
+}
 
+#afterSide {
+  margin-top: -2px;
+}
+
+#formSubmit {
+  background-color: #e2dcd9;
+  width: 220px;
+  height: 50px;
+  color: cornsilk;
+  font-size: 20px;
+  font-family: 'apercuMono';
 }
 
 .material-icons {

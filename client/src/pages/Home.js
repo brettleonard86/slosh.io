@@ -511,7 +511,7 @@ logout() {
                   <option>Ribs</option>
                   <option value="Veggies">Vegetables</option>
                   <option>Pizza</option>
-                  <option value="Chilli">Chili</option>
+                  <option value="Chili">Chilli</option>
                   <option>Fries</option>
                   <option>Sushi</option>
                   <option>Salad</option>
@@ -519,6 +519,7 @@ logout() {
 
                 <button>Submit</button>
               </form>
+
 
               <ul class="collapsible" data-collapsible="accordion">
               <hr class="list" />
@@ -555,8 +556,9 @@ logout() {
                       <p>Fries</p>
                     </span>
                     </label>
+                    <br />
                     </div>
-                <hr class="list"/>
+                <hr id="afterSide" class="list"/>
               	</li>
 
               	<li>
@@ -728,7 +730,7 @@ logout() {
                 </li>
                 </ul>
 
-
+                <button id="formSubmit">Submit</button>
 
 
 

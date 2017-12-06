@@ -1,6 +1,7 @@
 # https://raw.githubusercontent.com/facebook/react/master/.gitignore
 
 .DS_STORE
+package-lock.json
 node_modules/**/*
 *~
 *.pyc

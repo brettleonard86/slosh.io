@@ -22,7 +22,7 @@ mongoose.Promise = Promise;
 
 // Connect to the Mongo DB
 mongoose.connect(
-	"mongodb://heroku_sh5bhx7j:hujullrihc2ta0pbnms79mqqse@ds131826.mlab.com:31826/heroku_sh5bhx7j"
+	"mongodb://heroku_sh5bhx7j:hujullrihc2ta0pbnms79mqqse@ds131826.mlab.com:31826/heroku_sh5bhx7j",
 	//process.env.MONGODB_URI || "mongodb://localhost/sloshio",
 	{
   	  useMongoClient: true

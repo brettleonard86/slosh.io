@@ -12,6 +12,7 @@
     "material-design-lite": "^1.3.0",
     "mdl-ext": "^0.17.1",
     "mongoose": "^4.13.5",
+    "nodemon": "^1.12.5",
     "radium": "^0.19.6",
     "react-font-face": "^0.2.1"
   },

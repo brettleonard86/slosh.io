@@ -43,6 +43,8 @@ h1, h2, h3 {
 
 header {
   color: cornsilk;
+  position: fixed!important;
+  top: 0!important;
 }
 
 #appName {
@@ -173,14 +175,38 @@ ul {
   margin-top: -2px;
 }
 
-#formSubmit {
-  background-color: #e2dcd9;
-  width: 220px;
-  height: 50px;
-  color: cornsilk;
-  font-size: 20px;
-  font-family: 'apercuMono';
+/*===============
+Basic Dropdown */
+
+.dropdown-content li:nth-child(even) {background:rgba(0,0,0,.02);}
+.dropdown-content li:nth-child(even):hover {background:#eee}
+
+.dropdown-content {border-radius: 2px;}
+
+.dropdown-content li span, .select-dropdown{color:#35455F;}
+
+.active .selected > span {color:#00ADF2;}
+
+.active .selected {background-color:rgba(0,0,0,.05);}
+
+.active .selected > span::after {
+	content:"done";
+	font-family: 'Material Icons';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 24px;
+	line-height: .75;
+	letter-spacing: normal;
+	text-transform: none;
+	display: inline-block;
+	white-space: nowrap;
+	word-wrap: normal;
+	direction: ltr;
+	-webkit-font-feature-settings: 'liga';
+	-webkit-font-smoothing: antialiased;
+	float:right;
 }
+
 
 .material-icons {
   margin-left: -10px;

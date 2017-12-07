@@ -730,6 +730,7 @@ class UserForm extends React.Component {
                                   <p>Fruit</p>
                                 </span>
                               </label>
+                            
                             </div>
                             <hr className="list" />
                           </div>

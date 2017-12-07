@@ -33,7 +33,7 @@ mongoose.connection.on("connected", function(){
 	console.log("mongo is connected");
 })
 
-alcohol.seedData();
+//alcohol.seedData();
 
 // Listen on the port
 app.listen(PORT, function() {

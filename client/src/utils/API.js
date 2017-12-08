@@ -11,5 +11,12 @@ export default {
     },
   createUser: function(user) {
       return axios.post("/api/user", user);
+    },
+  addFavorite: function(favorite) {
+      return axios.post("/api/user/favorite", favorite)
+    },
+  getFavorite: function(user) {
+    return axios.get("/api/user/favorite/user", user)
     }
-    };
+
+};

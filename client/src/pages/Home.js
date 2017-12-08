@@ -772,8 +772,9 @@ class UserForm extends React.Component {
               {this.state.wines.map(wine => (
                 <div key={wine.name}>
                   <h2 style={titleStyle}>{wine.name}</h2>
+                  <p>{wine.longDescription}</p>
                   {wine.image ? (
-                    <img src={`/img/winePictures/${wine.image}`} />
+                    <img src={`/winePictures/${wine.image}`} />
                   ) : ''}
                   <button onClick={() => this.addToFavorites(wine)}>Add To Favorites</button>
                   {/* <p>{this.state.wine1Description}</p>

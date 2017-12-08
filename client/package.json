@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "concurrently": "^3.5.1",
+    "nodemon": "^1.12.5",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-google-login": "^3.0.2",

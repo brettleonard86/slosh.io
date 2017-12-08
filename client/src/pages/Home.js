@@ -122,9 +122,9 @@ class UserForm extends React.Component {
     this.setState(state);
   }
 
-  $(document).ready(function() {
-      $('select').material_select();
-    });
+  // $(document).ready(function() {
+  //     $('select').material_select();
+  //   });
 
   onSubmit = (e) => {
     e.preventDefault();
@@ -525,6 +525,7 @@ class UserForm extends React.Component {
                           <option>Fries</option>
                           <option>Sushi</option>
                           <option>Salad</option>
+                          <option>Poop</option>
                         </select>
 
                         <button>Submit</button>
@@ -823,7 +824,7 @@ class UserForm extends React.Component {
           </Modal>
 
         </div>
-      </div>
+      // </div>
     )
   }
 }

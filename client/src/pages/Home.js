@@ -402,6 +402,7 @@ class UserForm extends React.Component {
   openModal() {
     this.setState({ isModalOpen: true })
   }
+
   responseGoogle(response) {
     var userName = response.w3.ig;
     var userEmail = response.w3.U3;
@@ -426,6 +427,14 @@ class UserForm extends React.Component {
     this.setState({ isModalOpen: false });
     userLogin = response.profileObj.imageUrl;
     this.setState({ userLogin: true })
+
+      API.getFavorite(user.name)
+    .then(function (response) {
+        console.log("getFavorite", response);
+    })
+    .catch(function (error) {
+        console.log("getFavorite", error);
+    });
   }
 
   logout() {
@@ -442,9 +451,30 @@ class UserForm extends React.Component {
   }
 
   addToFavorites(wine) {
-    console.log(wine);
+    console.log(wine.name);
+   // var fav = wine.name;
+   // var favorite = { data: fav }
+   // console.log(favorite.data);
     // API request to save this wine to user's favorites
-  }
+
+  API.addFavorite(wine.name)
+    .then(function (response) {
+        console.log("addFavorite", response);
+    })
+    .catch(function (error) {
+        console.log("addFavorite", error);
+    });
+
+if(this.state.userLogin === true){
+  API.getFavorite(this.state.userLogin)
+    .then(function (response) {
+        console.log("addFavorite", this.userLogin);
+    })
+    .catch(function (error) {
+        console.log("addFavorite", error);
+    });
+}
+}
 
   render() {
     const { choice } = this.state;

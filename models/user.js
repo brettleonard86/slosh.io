@@ -24,7 +24,11 @@ var userSchema = new Schema({
   date: {
     type: Date,
     default: Date.now
-  }
+  },
+  //this should collect favorite's
+  favorite: [{
+    type: String
+  }]
 });
 
 // Create the User model using the userSchema

@@ -122,6 +122,11 @@ class UserForm extends React.Component {
     this.setState(state);
   }
 
+  // $(document).ready(function() {
+  //     $('select').material_select();
+  //   });
+    
+
   onSubmit = (e) => {
     e.preventDefault();
     console.log("submit choice line 71", this.state)
@@ -521,10 +526,17 @@ class UserForm extends React.Component {
                           <option>Fries</option>
                           <option>Sushi</option>
                           <option>Salad</option>
+                          <option>Poop</option>
                         </select>
 
                         <button>Submit</button>
                       </form>
+                      </div>
+
+
+
+
+
 
 
                       <ul className="collapsible" data-collapsible="accordion">
@@ -532,6 +544,16 @@ class UserForm extends React.Component {
                         <li>
                           <div id="listHead" className="collapsible-header"><p className="material-icons">flare&nbsp;</p>Side</div>
                           <div className="collapsible-body">
+                            <form onSubmit={this.onSubmit}>
+                            <select name="choice" className="form-control" id="sel1" onChange={this.onChange}>
+                              <option>Cheese</option>
+                              <option>Fruit</option>
+                              <option>Soup</option>
+                              <option>Vegetables</option>
+                              <option>Fries</option>
+                            </select>
+                          </form>
+
                             <label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" htmlFor="checkbox-1">
                               <input type="checkbox" id="checkbox-1" className="mdl-checkbox__input" />
                               <span className="mdl-checkbox__label">
@@ -730,7 +752,6 @@ class UserForm extends React.Component {
                                   <p>Fruit</p>
                                 </span>
                               </label>
-                            
                             </div>
                             <hr className="list" />
                           </div>
@@ -804,7 +825,7 @@ class UserForm extends React.Component {
           </Modal>
 
         </div>
-      </div>
+      // </div>
     )
   }
 }

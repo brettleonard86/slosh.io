@@ -68,6 +68,7 @@ body {
 
 .mdl-card__supporting-text {
   font-size: 10px;
+  padding-right: 60px;
 }
 
 .wineTitle h2 {

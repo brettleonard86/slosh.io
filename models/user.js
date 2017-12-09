@@ -26,8 +26,9 @@ var userSchema = new Schema({
     default: Date.now
   },
   //this should collect favorite's
-  favorite: [{
-    type: String
+  wine: [{
+    type: String,
+    unique: { index: { unique: true } }
   }]
 });
 

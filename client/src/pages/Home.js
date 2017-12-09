@@ -54,7 +54,7 @@ window.eqjs = eqjs; // Put in global scope - for use with script in page
   }
 }} />
 
-
+let wordmark = '';
 let userLogin = '';
 let wine1 = '';
 let wine2 = '';
@@ -65,6 +65,7 @@ let wine3Description = '';
 let wine1Image = null;
 let wine2Image = null;
 let wine3Image = null;
+
 
 const loggedStyle = {
   position: "fixed",
@@ -83,6 +84,7 @@ const imageStyle = {
 
 const titleStyle = {
   marginTop: "1.3em",
+  backgroundColor: "none"
 }
 const headerColor = {
   backgroundColor: "firebrick"
@@ -112,7 +114,8 @@ class UserForm extends React.Component {
       wine1Image: "",
       wine2Image: "",
       wine3Image: "",
-      wines: []
+      wines: [],
+      wordmark: "wordmark.png"
     };
   }
 
@@ -134,6 +137,7 @@ class UserForm extends React.Component {
         this.setState({
           wines: [...response.data[0].wines]
         })
+        this.setState({wordmark: ""});
         // this.setState({ wine1: response.data[0].wines[0].name });
         // this.setState({ wine1Description: response.data[0].wines[0].longDescription })
         // switch (this.state.wine1) {
@@ -437,7 +441,6 @@ class UserForm extends React.Component {
   closeModal() {
     this.setState({ isModalOpen: false })
   }
-
   showLogout = () => {
     this.setState({ showLogout: !this.state.showLogout })
   }
@@ -491,149 +494,124 @@ class UserForm extends React.Component {
 
                       <a href="#tab2-panel" className="mdl-tabs__tab">
                         About
-            	</a>
+            	        </a>
 
-              <a href="#tab3-panel" className="mdl-tabs__tab">
-              Favorite
-            	</a>
+                      <a href="#tab3-panel" className="mdl-tabs__tab">
+                        Favorite
+            	        </a>
 
                     </div>
                   </div>
 
                   <div className="mdl-cell mdl-cell--10-col">
-                    <div className="mdl-tabs__panel is-active" id="tab1-panel">
+                    <div className="mdl-tabs__panel is-active" id="tab1-panel">                   
                       <form onSubmit={this.onSubmit}>
-                        <select name="choice" className="form-control" id="sel1" onChange={this.onChange}>
-                          <option>Stew</option>
-                          <option value="Pasta Red Sauce">Pasta (Red Sauce)</option>
-                          <option value="Pasta Cream Sauce">Pasta (White Sauce)</option>
-                          <option>Cured Meats</option>
-                          <option>Poultry</option>
-                          <option>Pork</option>
-                          <option>Cheeses</option>
-                          <option>Fruits</option>
-                          <option>Chocolate Cake</option>
-                          <option>Burgers</option>
-                          <option>BBQ</option>
-                          <option>Ribs</option>
-                          <option value="Veggies">Vegetables</option>
-                          <option>Pizza</option>
-                          <option value="Chili">Chilli</option>
-                          <option>Fries</option>
-                          <option>Sushi</option>
-                          <option>Salad</option>
-                        </select>
+                      <ul className="collapsible" data-collapsible="accordion">
+                      <hr className="list" />
+                      <li>
+                        <div id="listHead" className="collapsible-header"><p className="material-icons">flare&nbsp;</p>Side</div>
+                        <div className="collapsible-body"> 
+                      <select name="choice" className="form-control" id="sel1" onChange={this.onChange}>
+                        <option>Cheeses</option>
+                        <option>Fruits</option>
+                        <option value="Stew" value="Chilli">Soup</option>
+                        <option value="Veggies">Vegetables</option>
+                        <option>Fries</option>
+                      </select>
 
-                        <button>Submit</button>
-                        </form>
+                      <br />
+                      </div>
+                      <hr id="afterSide" className="list" />
+                      </li>
 
-                        <form onSubmit={this.onSubmit}>
-                        <ul className="collapsible" data-collapsible="accordion">
-                        <hr className="list" />
-                        <li>
-                          <div id="listHead" className="collapsible-header"><p className="material-icons">flare&nbsp;</p>Side</div>
-                          <div className="collapsible-body"> 
-                        <select name="choice" className="form-control" id="sel1" onChange={this.onChange}>
-                          <option>Cheeses</option>
-                          <option>Fruits</option>
-                          <option value="Stew" value="Chilli">Soup</option>
-                          <option value="Veggies">Vegetables</option>
-                          <option>Fries</option>
-                        </select>
-
-                        <br />
-                        </div>
-                        <hr id="afterSide" className="list" />
-                        </li>
-
-                        <li>
-                          <div id="listHead" className="collapsible-header"><i className="material-icons">whatshot&nbsp;</i>Entrée</div>
-                          <div className="collapsible-body">
-                            <div className="collapsible popout" data-collapsible="accordion">
-                              <li>
-                                <div className="collapsible-header">
-                                  <br />
-                                  Type
-                              </div>
-                                <div className="collapsible-body">
-                                  <br />
-                                  <select name="choice" className="form-control" id="sel1" onChange={this.onChange}>
-                                    <option>Mexican</option>
-                                    <option>American</option>
-                                    <option>Chinese</option>
-                                    <option>Italian</option>
-                                    <option>Thai</option>
-                                  </select>
-                                </div>
-                              </li>
-                            </div>
-                            <hr className="list" />
-
-                            <div className="collapsible popout" data-collapsible="accordion">
-                              <li>
-                                <div className="collapsible-header">
-                                  Meat
-                                </div>
-                                <div className="collapsible-body">
+                      <li>
+                        <div id="listHead" className="collapsible-header"><i className="material-icons">whatshot&nbsp;</i>Entrée</div>
+                        <div className="collapsible-body">
+                          <div className="collapsible popout" data-collapsible="accordion">
+                            <li>
+                              <div className="collapsible-header">
                                 <br />
-                                  <select name="choice" className="form-control" id="sel1" onChange={this.onChange}>
-                                    <option value="Burgers">Beef</option>
-                                    <option>Chicken</option>
-                                    <option value="Shellfish" value="Oysters">Fish</option>
-                                    <option>Poultry</option>
-                                    <option value="Ribs">Pork</option>
-                                    <option>Lamb</option>
-                                    <option>Cured Meats</option>
-                                  </select>
-                                </div>
-                              </li>
+                                Type
                             </div>
-                            <hr className="list" />
-
-                            <div className="collapsible popout" data-collapsible="accordion">
-                              <li>
-                                <div className="collapsible-header">
-                                  Dish
-                                </div>
-                                <div className="collapsible-body">
-                                  <br />
-                                  <select name="choice" className="form-control" id="sel1" onChange={this.onChange}>
-                                    <option>Pizza</option>
-                                    <option>BBQ</option>
-                                    <option>Burgers</option>
-                                    <option>Sushi</option>
-                                    <option>Pasta Red Sauce</option>
-                                    <option>Pasta White Sauce</option>
-                                  </select>
-                                </div>
-                              </li>
-                            </div>
-
+                              <div className="collapsible-body">
+                                <br />
+                                <select name="choice" className="form-control" id="sel1" onChange={this.onChange}>
+                                  <option>Mexican</option>
+                                  <option>American</option>
+                                  <option>Chinese</option>
+                                  <option>Italian</option>
+                                  <option>Thai</option>
+                                </select>
+                              </div>
+                            </li>
                           </div>
                           <hr className="list" />
-                        </li>
 
-
-                        <li>
-                          <div id="listHead" className="collapsible-header"><i className="material-icons">filter_drama&nbsp;</i>Dessert</div>
-                          <div className="collapsible-body">
-                            <div className="collapsible-header">
+                          <div className="collapsible popout" data-collapsible="accordion">
+                            <li>
+                              <div className="collapsible-header">
+                                Meat
+                              </div>
+                              <div className="collapsible-body">
                               <br />
-                              <select name="choice" className="form-control" id="sel1" onChange={this.onChange}>
-                              <option>Fruit</option>
-                              <option>Chocolate Cake</option>
-                              </select>
-                            </div>
-                            <hr className="list" />
+                                <select name="choice" className="form-control" id="sel1" onChange={this.onChange}>
+                                  <option value="Burgers">Beef</option>
+                                  <option>Chicken</option>
+                                  <option value="Shellfish" value="Oysters">Fish</option>
+                                  <option>Poultry</option>
+                                  <option value="Ribs">Pork</option>
+                                  <option>Lamb</option>
+                                  <option>Cured Meats</option>
+                                </select>
+                              </div>
+                            </li>
                           </div>
-                        </li>
-                      </ul>
+                          <hr className="list" />
 
-                      <button id="formSubmit">Submit</button>
-                      </form>
+                          <div className="collapsible popout" data-collapsible="accordion">
+                            <li>
+                              <div className="collapsible-header">
+                                Dish
+                              </div>
+                              <div className="collapsible-body">
+                                <br />
+                                <select name="choice" className="form-control" id="sel1" onChange={this.onChange}>
+                                  <option>Pizza</option>
+                                  <option>BBQ</option>
+                                  <option>Burgers</option>
+                                  <option>Sushi</option>
+                                  <option>Pasta Red Sauce</option>
+                                  <option>Pasta White Sauce</option>
+                                </select>
+                              </div>
+                            </li>
+                          </div>
 
-                    </div>
+                        </div>
+                        <hr className="list" />
+                      </li>
+
+
+                      <li>
+                        <div id="listHead" className="collapsible-header"><i className="material-icons">filter_drama&nbsp;</i>Dessert</div>
+                        <div className="collapsible-body">
+                          <div className="collapsible-header">
+                            <br />
+                            <select name="choice" className="form-control" id="sel1" onChange={this.onChange}>
+                            <option>Fruit</option>
+                            <option>Chocolate Cake</option>
+                            </select>
+                          </div>
+                          <hr className="list" />
+                        </div>
+                      </li>
+                    </ul>
+
+                    <button id="formSubmit">Submit</button>
+                    </form>
+
                   </div>
+                </div>
 
                   <div className="mdl-tabs__panel" id="tab2-panel">
                     <div className="image"></div>
@@ -642,45 +620,58 @@ class UserForm extends React.Component {
                       Simply tell slosh what’s cooking, filter through your current drinking
                       preferences, and we’ll find the right companion for your meal. Ps : double-fist when necessary.
                     </p>
-                          <p id="nameDevice">
-                            slurp + nosh
+                    <p id="nameDevice">
+                      slurp + nosh
                     </p>
-                          <p id="nameAnswer">
-                            = slosh
+                    <p id="nameAnswer">
+                      = slosh
                     </p>
-                        </div>
+                  </div>
 
-                        <div className="mdl-tabs__panel" id="tab3-panel">
-                          Your Favorite Picks
+                  <div className="mdl-tabs__panel" id="tab3-panel">
+                    Your Favorite Picks
                   </div>
                 </div>
-             </div>
+              </div>
+            </div>
           </div>
-        </div>
 
           <main className="mdl-layout__content">
             <div className="page-content">
+  
+                  <div className="backgroundImage">
 
 
               {this.state.wines.map(wine => (
-               /*div after forloop is where you create the cards*/
-                <div key={wine.name}>
-                  <h2 style={titleStyle}>{wine.name}</h2>
-                  {wine.image ? (
-                    <img src={`/img/winePictures/${wine.image}`} />
-                  ) : ''}
-                  <button onClick={() => this.addToFavorites(wine)}>Add To Favorites</button>
-                  {/* <p>{this.state.wine1Description}</p>
-                  <h2>{this.state.wine2}</h2>
-                  <img src={this.state.wine2Image} />
-                  <p>{this.state.wine2Description}</p>
-                  <h2>{this.state.wine3}</h2>
-                  <img src={this.state.wine3Image} />
-                  <p>{this.state.wine3Description}</p> */}
+                 /*div after forloop is where you create the cards*/
+              <div key={wine.name}>
+                <div className="mdl-card mdl-shadow--2dp demo-card-square">
+                    <div className="mdl-card__title mdl-card--expand">
+                    <div className="wineImage">
+                        {wine.image ? (
+                        <img src={`/winePictures/${wine.image}`} />
+                        ) : ''}
+                      </div>
+                    </div>
+                      <div className="wineTitle">
+                        <h2 className="mdl-card__title-text" style={titleStyle}>
+                          {wine.name}
+                        </h2>
+                      </div>
+                      <div className="mdl-card__supporting-text">
+                        {wine.longDescription}
+                    </div>
+                    <div className="mdl-card__actions mdl-card--border">
+                      <button id="demo-show-snackbar" className="mdl-button mdl-js-button mdl-button--raised" type="button">❤</button>
+                      <div id="demo-snackbar-example" className="mdl-js-snackbar mdl-snackbar">
+                        <div className="mdl-snackbar__text"></div>
+                        <button class="mdl-snackbar__action" type="button"></button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               ))}
-
-
+              </div>
             </div>
           </main>
 

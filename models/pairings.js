@@ -5,7 +5,7 @@ const pairingsSchema = new Schema({
   name: {type: String},
   wines: [{
     name: { type: String },
-    longDescription: { type: String },
+    longDescription: { type: String, max: 75 },
     wineType: { type: String },
     wineBrand: { type: String },
     varietal: { type: String },

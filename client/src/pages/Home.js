@@ -54,7 +54,7 @@ window.eqjs = eqjs; // Put in global scope - for use with script in page
   }
 }} />
 
-
+let wordmark = '';
 let userLogin = '';
 let wine1 = '';
 let wine2 = '';
@@ -65,6 +65,7 @@ let wine3Description = '';
 let wine1Image = null;
 let wine2Image = null;
 let wine3Image = null;
+
 
 const loggedStyle = {
   position: "fixed",
@@ -83,9 +84,13 @@ const imageStyle = {
 
 const titleStyle = {
   marginTop: "1.3em",
+  backgroundColor: "none"
 }
 const headerColor = {
-  backgroundColor: "firebrick"
+  backgroundColor: "firebrick",
+  position: "fixed",
+  top: "0",
+  right: "0"
 }
 
 const buttonCenter = {
@@ -112,7 +117,8 @@ class UserForm extends React.Component {
       wine1Image: "",
       wine2Image: "",
       wine3Image: "",
-      wines: []
+      wines: [],
+      wordmark: "wordmark.png"
     };
   }
 
@@ -134,6 +140,7 @@ class UserForm extends React.Component {
         this.setState({
           wines: [...response.data[0].wines]
         })
+        this.setState({wordmark: ""});
         // this.setState({ wine1: response.data[0].wines[0].name });
         // this.setState({ wine1Description: response.data[0].wines[0].longDescription })
         // switch (this.state.wine1) {
@@ -486,279 +493,147 @@ class UserForm extends React.Component {
 
                       <a href="#tab1-panel" className="mdl-tabs__tab is-active">
                         Pairings
-              </a>
+                      </a>
 
                       <a href="#tab2-panel" className="mdl-tabs__tab">
                         About
-            	</a>
+            	        </a>
 
                       <a href="#tab3-panel" className="mdl-tabs__tab">
                         Favorite
-            	</a>
+            	        </a>
 
                     </div>
                   </div>
 
                   <div className="mdl-cell mdl-cell--10-col">
-                    <div className="mdl-tabs__panel is-active" id="tab1-panel">
+                    <div className="mdl-tabs__panel is-active" id="tab1-panel">                   
                       <form onSubmit={this.onSubmit}>
-                        <select name="choice" className="form-control" id="sel1" onChange={this.onChange}>
-                          <option>Stew</option>
-                          <option value="Pasta Red Sauce">Pasta (Red Sauce)</option>
-                          <option value="Pasta Cream Sauce">Pasta (White Sauce)</option>
-                          <option>Cured Meats</option>
-                          <option>Poultry</option>
-                          <option>Pork</option>
-                          <option>Cheeses</option>
-                          <option>Fruits</option>
-                          <option>Chocolate Cake</option>
-                          <option>Burgers</option>
-                          <option>BBQ</option>
-                          <option>Ribs</option>
-                          <option value="Veggies">Vegetables</option>
-                          <option>Pizza</option>
-                          <option value="Chili">Chilli</option>
-                          <option>Fries</option>
-                          <option>Sushi</option>
-                          <option>Salad</option>
-                        </select>
-
-                        <button>Submit</button>
-                      </form>
-
-
                       <ul className="collapsible" data-collapsible="accordion">
-                        <hr className="list" />
-                        <li>
-                          <div id="listHead" className="collapsible-header"><p className="material-icons">flare&nbsp;</p>Side</div>
-                          <div className="collapsible-body">
-                            <label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" htmlFor="checkbox-1">
-                              <input type="checkbox" id="checkbox-1" className="mdl-checkbox__input" />
-                              <span className="mdl-checkbox__label">
-                                <p>Cheese</p>
-                              </span>
-                            </label>
-                            <label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" htmlFor="checkbox-2">
-                              <input type="checkbox" id="checkbox-2" className="mdl-checkbox__input" />
-                              <span className="mdl-checkbox__label">
-                                <p>Fruit</p>
-                              </span>
-                            </label>
-                            <label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" htmlFor="checkbox-3">
-                              <input type="checkbox" id="checkbox-3" className="mdl-checkbox__input" />
-                              <span className="mdl-checkbox__label">
-                                <p>Soup</p>
-                              </span>
-                            </label>
-                            <label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" htmlFor="checkbox-4">
-                              <input type="checkbox" id="checkbox-4" className="mdl-checkbox__input" />
-                              <span className="mdl-checkbox__label">
-                                <p>Vegetables</p>
-                              </span>
-                            </label>
-                            <label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" htmlFor="checkbox-5">
-                              <input type="checkbox" id="checkbox-5" className="mdl-checkbox__input" />
-                              <span className="mdl-checkbox__label">
-                                <p>Fries</p>
-                              </span>
-                            </label>
-                            <br />
-                          </div>
-                          <hr id="afterSide" className="list" />
-                        </li>
+                      <hr className="list" />
+                      <li>
+                        <div id="listHead" className="collapsible-header"><p className="material-icons">flare&nbsp;</p>Side</div>
+                        <div className="collapsible-body"> 
+                      <select name="choice" className="form-control" id="sel1" onChange={this.onChange}>
+                        <option>Cheeses</option>
+                        <option>Fruits</option>
+                        <option value="Stew" value="Chilli">Soup</option>
+                        <option value="Veggies">Vegetables</option>
+                        <option>Fries</option>
+                      </select>
 
-                        <li>
-                          <div id="listHead" className="collapsible-header"><i className="material-icons">whatshot&nbsp;</i>Entrée</div>
-                          <div className="collapsible-body">
-                            <div className="collapsible popout" data-collapsible="accordion">
-                              <li>
-                                <div className="collapsible-header">
-                                  <br />
-                                  Type
+                      <br />
+                      </div>
+                      <hr id="afterSide" className="list" />
+                      </li>
+
+                      <li>
+                        <div id="listHead" className="collapsible-header"><i className="material-icons">whatshot&nbsp;</i>Entrée</div>
+                        <div className="collapsible-body">
+                          <div className="collapsible popout" data-collapsible="accordion">
+                            <li>
+                              <div className="collapsible-header">
+                                <br />
+                                Type
+                            </div>
+                              <div className="collapsible-body">
+                                <br />
+                                <select name="choice" className="form-control" id="sel1" onChange={this.onChange}>
+                                  <option>Mexican</option>
+                                  <option>American</option>
+                                  <option>Chinese</option>
+                                  <option>Italian</option>
+                                  <option>Thai</option>
+                                </select>
                               </div>
-                                <div className="collapsible-body">
-                                  <br />
-                                  <label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" htmlFor="checkbox-6">
-                                    <input type="checkbox" id="checkbox-6" className="mdl-checkbox__input" />
-                                    <span className="mdl-checkbox__label">
-                                      <p>Mexican</p>
-                                    </span>
-                                  </label>
-                                  <label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" htmlFor="checkbox-7">
-                                    <input type="checkbox" id="checkbox-7" className="mdl-checkbox__input" />
-                                    <span className="mdl-checkbox__label">
-                                      <p>Italian</p>
-                                    </span>
-                                  </label>
-                                  <label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" htmlFor="checkbox-8">
-                                    <input type="checkbox" id="checkbox-8" className="mdl-checkbox__input" />
-                                    <span className="mdl-checkbox__label">
-                                      <p>American</p>
-                                    </span>
-                                  </label>
-                                  <label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" htmlFor="checkbox-9">
-                                    <input type="checkbox" id="checkbox-9" className="mdl-checkbox__input" />
-                                    <span className="mdl-checkbox__label">
-                                      <p>Thai</p>
-                                    </span>
-                                  </label>
-                                  <label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" htmlFor="checkbox-10">
-                                    <input type="checkbox" id="checkbox-10" className="mdl-checkbox__input" />
-                                    <span className="mdl-checkbox__label">
-                                      <p>Chinese</p>
-                                    </span>
-                                  </label>
-                                </div>
-                              </li>
-                            </div>
-                            <hr className="list" />
-
-                            <div className="collapsible popout" data-collapsible="accordion">
-                              <li>
-                                <div className="collapsible-header">
-                                  Meat
-                  </div>
-                                <div className="collapsible-body">
-                                  <br />
-                                  <label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" htmlFor="checkbox-11">
-                                    <input type="checkbox" id="checkbox-11" className="mdl-checkbox__input" />
-                                    <span className="mdl-checkbox__label">
-                                      <p>Beef</p>
-                                    </span>
-                                  </label>
-                                  <label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" htmlFor="checkbox-12">
-                                    <input type="checkbox" id="checkbox-12" className="mdl-checkbox__input" />
-                                    <span className="mdl-checkbox__label">
-                                      <p>Chicken</p>
-                                    </span>
-                                  </label>
-                                  <label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" htmlFor="checkbox-13">
-                                    <input type="checkbox" id="checkbox-13" className="mdl-checkbox__input" />
-                                    <span className="mdl-checkbox__label">
-                                      <p>Seafood</p>
-                                    </span>
-                                  </label>
-                                  <label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" htmlFor="checkbox-14">
-                                    <input type="checkbox" id="checkbox-14" className="mdl-checkbox__input" />
-                                    <span className="mdl-checkbox__label">
-                                      <p>Poultry</p>
-                                    </span>
-                                  </label>
-                                  <label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" htmlFor="checkbox-15">
-                                    <input type="checkbox" id="checkbox-15" className="mdl-checkbox__input" />
-                                    <span className="mdl-checkbox__label">
-                                      <p>Pork</p>
-                                    </span>
-                                  </label>
-                                  <label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" htmlFor="checkbox-16">
-                                    <input type="checkbox" id="checkbox-16" className="mdl-checkbox__input" />
-                                    <span className="mdl-checkbox__label">
-                                      <p>Cured Meat</p>
-                                    </span>
-                                  </label>
-                                </div>
-                              </li>
-                            </div>
-                            <hr className="list" />
-
-                            <div className="collapsible popout" data-collapsible="accordion">
-                              <li>
-                                <div className="collapsible-header">
-                                  Dish
-                  </div>
-                                <div className="collapsible-body">
-                                  <br />
-                                  <label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" htmlFor="checkbox-17">
-                                    <input type="checkbox" id="checkbox-17" className="mdl-checkbox__input" />
-                                    <span className="mdl-checkbox__label">
-                                      <p>Pizza</p>
-                                    </span>
-                                  </label>
-                                  <label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" htmlFor="checkbox-18">
-                                    <input type="checkbox" id="checkbox-18" className="mdl-checkbox__input" />
-                                    <span className="mdl-checkbox__label">
-                                      <p>BBQ</p>
-                                    </span>
-                                  </label>
-                                  <label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" htmlFor="checkbox-19">
-                                    <input type="checkbox" id="checkbox-19" className="mdl-checkbox__input" />
-                                    <span className="mdl-checkbox__label">
-                                      <p>Burger</p>
-                                    </span>
-                                  </label>
-                                  <label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" htmlFor="checkbox-20">
-                                    <input type="checkbox" id="checkbox-20" className="mdl-checkbox__input" />
-                                    <span className="mdl-checkbox__label">
-                                      <p>Sushi</p>
-                                    </span>
-                                  </label>
-                                  <label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" htmlFor="checkbox-21">
-                                    <input type="checkbox" id="checkbox-21" className="mdl-checkbox__input" />
-                                    <span className="mdl-checkbox__label">
-                                      <p>Pasta Red Sauce</p>
-                                    </span>
-                                  </label>
-                                  <label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" htmlFor="checkbox-22">
-                                    <input type="checkbox" id="checkbox-22" className="mdl-checkbox__input" />
-                                    <span className="mdl-checkbox__label">
-                                      <p>Pasta White Sauce</p>
-                                    </span>
-                                  </label>
-                                </div>
-                              </li>
-                            </div>
-
+                            </li>
                           </div>
                           <hr className="list" />
-                        </li>
 
-
-                        <li>
-                          <div id="listHead" className="collapsible-header"><i className="material-icons">filter_drama&nbsp;</i>Dessert</div>
-                          <div className="collapsible-body">
-                            <div className="collapsible-header">
+                          <div className="collapsible popout" data-collapsible="accordion">
+                            <li>
+                              <div className="collapsible-header">
+                                Meat
+                              </div>
+                              <div className="collapsible-body">
                               <br />
-                              <label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" htmlFor="checkbox-23">
-                                <input type="checkbox" id="checkbox-23" className="mdl-checkbox__input" />
-                                <span className="mdl-checkbox__label">
-                                  <p>Chocolate Cake</p>
-                                </span>
-                              </label>
-                              <label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" htmlFor="checkbox-24">
-                                <input type="checkbox" id="checkbox-24" className="mdl-checkbox__input" />
-                                <span className="mdl-checkbox__label">
-                                  <p>Fruit</p>
-                                </span>
-                              </label>
-                            </div>
-                            <hr className="list" />
+                                <select name="choice" className="form-control" id="sel1" onChange={this.onChange}>
+                                  <option value="Burgers">Beef</option>
+                                  <option>Chicken</option>
+                                  <option value="Shellfish" value="Oysters">Fish</option>
+                                  <option>Poultry</option>
+                                  <option value="Ribs">Pork</option>
+                                  <option>Lamb</option>
+                                  <option>Cured Meats</option>
+                                </select>
+                              </div>
+                            </li>
                           </div>
-                        </li>
-                      </ul>
+                          <hr className="list" />
 
-                      <button id="formSubmit">Submit</button>
+                          <div className="collapsible popout" data-collapsible="accordion">
+                            <li>
+                              <div className="collapsible-header">
+                                Dish
+                              </div>
+                              <div className="collapsible-body">
+                                <br />
+                                <select name="choice" className="form-control" id="sel1" onChange={this.onChange}>
+                                  <option>Pizza</option>
+                                  <option>BBQ</option>
+                                  <option>Burgers</option>
+                                  <option>Sushi</option>
+                                  <option>Pasta Red Sauce</option>
+                                  <option>Pasta White Sauce</option>
+                                </select>
+                              </div>
+                            </li>
+                          </div>
 
-                    </div>
+                        </div>
+                        <hr className="list" />
+                      </li>
+
+
+                      <li>
+                        <div id="listHead" className="collapsible-header"><i className="material-icons">filter_drama&nbsp;</i>Dessert</div>
+                        <div className="collapsible-body">
+                          <div className="collapsible-header">
+                            <br />
+                            <select name="choice" className="form-control" id="sel1" onChange={this.onChange}>
+                            <option>Fruit</option>
+                            <option>Chocolate Cake</option>
+                            </select>
+                          </div>
+                          <hr className="list" />
+                        </div>
+                      </li>
+                    </ul>
+
+                    <button id="formSubmit">Submit</button>
+                    </form>
+
                   </div>
+                </div>
 
                   <div className="mdl-tabs__panel" id="tab2-panel">
                     <div className="image"></div>
                     <p id="aboutUs">
                       The only application that respects your food with proper alcohol.
-                Simply tell slosh what’s cooking, filter through your current drinking
-                preferences, and we’ll find the right companion for your meal. Ps : double-fist when necessary.
-              </p>
+                      Simply tell slosh what’s cooking, filter through your current drinking
+                      preferences, and we’ll find the right companion for your meal. Ps : double-fist when necessary.
+                    </p>
                     <p id="nameDevice">
                       slurp + nosh
-              </p>
+                    </p>
                     <p id="nameAnswer">
                       = slosh
-              </p>
+                    </p>
                   </div>
 
                   <div className="mdl-tabs__panel" id="tab3-panel">
                     Your Favorite Picks
-            </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -766,26 +641,42 @@ class UserForm extends React.Component {
 
           <main className="mdl-layout__content">
             <div className="page-content">
+  
+                  <div className="backgroundImage">
 
 
               {this.state.wines.map(wine => (
-                <div key={wine.name}>
-                  <h2 style={titleStyle}>{wine.name}</h2>
-                  {wine.image ? (
-                    <img src={`/img/winePictures/${wine.image}`} />
-                  ) : ''}
-                  <button onClick={() => this.addToFavorites(wine)}>Add To Favorites</button>
-                  {/* <p>{this.state.wine1Description}</p>
-                  <h2>{this.state.wine2}</h2>
-                  <img src={this.state.wine2Image} />
-                  <p>{this.state.wine2Description}</p>
-                  <h2>{this.state.wine3}</h2>
-                  <img src={this.state.wine3Image} />
-                  <p>{this.state.wine3Description}</p> */}
+                 /*div after forloop is where you create the cards*/
+              <div key={wine.name}>
+                <div className="mdl-card mdl-shadow--2dp demo-card-square">
+                    <div className="mdl-card__title mdl-card--expand">
+                    <div className="wineImage">
+                        {wine.image ? (
+                        <img src={`/winePictures/${wine.image}`} />
+                        ) : ''}
+                      </div>
+                    </div>
+                      <div className="wineTitle">
+                        <h2 className="mdl-card__title-text" style={titleStyle}>
+                          {wine.name}
+                        </h2>
+                      </div>
+                      <div className="mdl-card__supporting-text">
+                      <div className="longDescription">
+                        {wine.longDescription}
+                        </div>
+                    </div>
+                    <div className="mdl-card__actions mdl-card--border">
+                      <button id="demo-show-snackbar" className="mdl-button mdl-js-button mdl-button--raised" type="button">❤</button>
+                      <div id="demo-snackbar-example" className="mdl-js-snackbar mdl-snackbar">
+                        <div className="mdl-snackbar__text"></div>
+                        <button class="mdl-snackbar__action" type="button"></button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               ))}
-
-
+              </div>
             </div>
           </main>
 

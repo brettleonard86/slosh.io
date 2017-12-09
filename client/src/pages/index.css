@@ -16,11 +16,96 @@
 
 body {
   font-family: 'apercuMono';
-  background-color: #e2dcd9;
+  background-image: url('/winePictures/backwordmark-16.jpg');
+  position: relative;
 }
+.longDescription {
+  margin-right: 18px;
+}
+.mainImage {
+  margin-top: 4em;
+  width: 95%;
+  height: 95%;
+}
+
+.sport-tab-card {
+  width: 312px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5%;
+  padding: 20px;
+}
+
+.sport-tab > .mdl-tabs__panel {
+  padding-top: 0px;
+}
+
+#about {
+  font-size: 8px;
+  line-height: 10px;
+}
+
+.wineImage img{
+  margin-left: 215%;
+  width: 100px;
+  z-index: -1;
+}
+.demo-card-square.mdl-card {
+  width: 378px;
+  height: 720px;
+}
+
+.demo-card-square.mdl-card {
+  margin: 1.2em;
+} 
 
 * {
   box-sizing: border-box;
+}
+
+.wineTitle {
+  margin-top: -20em;
+}
+
+.mdl-card__supporting-text {
+  font-size: 10px;
+}
+
+.wineTitle h2 {
+  font-size: 28px;
+  color: firebrick;
+}
+
+.backgroundImage {
+  background-image: url('/winePictures/backwordmark-16.jpg');
+  width: 80%;
+}
+
+.demo-card-square.mdl-card {
+  width: 320px;
+  height: 320px;
+  float: left;
+  margin: 1rem;
+  position: relative;
+}
+
+.demo-card-square.mdl-card:hover {
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .2);
+}
+
+.demo-card-square > .mdl-card__title {
+  background: url('https://www.getmdl.io/assets/demos/welcome_card.jpg') center / cover;
+  color: firebrick;
+}
+
+.demo-card-square > .mdl-card__accent {
+  background: #ff9800;
+}
+
+body {
+  padding: 20px;
+  position: relative;
 }
 
 html,
@@ -74,20 +159,20 @@ header {
   margin-left: 25px;
 }
 
-
 div.image {
-   content:url(/img/winePictures/redmark.png);
+   content:url(/winePictures/redmark.png);
    width: 220px;
    height: auto;
    padding-bottom: 5px;
 }​
 
 div.imageHome {
-   content:url(/img/winePictures/blackmark.png);
+   content:url(/winePictures/blackmark.png);
    width: 100px;
    height: auto;
    padding-bottom: 5px;
 }​
+
 
 /*Vertical Tabs*/
 .vertical-mdl-tabs {
@@ -109,11 +194,10 @@ div.imageHome {
     line-height: 35px;
     box-sizing: border-box;
     letter-spacing: 2px;
-    color: #d1cdcc;
 }
 
 a.mdl-tabs__tab {
-  padding-left: 120px;
+  padding-left: 20px;
 }
 
 .vertical-mdl-tabs .mdl-tabs__tab:hover {
@@ -193,6 +277,7 @@ hr .list {
 
 #card {
   background-color: cornsilk;
+  mix-blend-mode: multiply;
 }
 .demo-card-square.mdl-card {
   width: 320px;
